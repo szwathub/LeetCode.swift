@@ -1,3 +1,1 @@
-struct LeetCode {
-    var text = "Hello, LeetCode!"
-}
+typealias ListNode = LinkedListNode<Int>
