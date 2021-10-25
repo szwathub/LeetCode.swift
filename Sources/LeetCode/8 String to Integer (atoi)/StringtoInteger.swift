@@ -40,19 +40,15 @@ class StringtoInteger {
                 case .sign:
                     sign = character == "-" ? -1 : 1
                 case .number:
-                    guard let value = Int(String(character)) else {
-                        state = .end
-                        break
-                    }
-
-                    ans = ans * 10 + value
-
-                    if sign == 1 && ans > Int32.max {
-                        ans = Int(Int32.max)
-                        state = .end
-                    } else if sign == -1 && ans * -1 < Int32.min {
-                        ans = -Int(Int32.min)
-                        state = .end
+                    if let value = Int(String(character)) {
+                        ans = ans * 10 + value
+                        if sign == 1 && ans > Int32.max {
+                            ans = Int(Int32.max)
+                            state = .end
+                        } else if sign == -1 && ans * -1 < Int32.min {
+                            ans = -Int(Int32.min)
+                            state = .end
+                        }
                     }
                 case .end:
                     break

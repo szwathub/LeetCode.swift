@@ -22,6 +22,6 @@ class DestinationCity {
             set.remove(path[0])
         }
 
-        return set.first ?? ""
+        return set.first!
     }
 }
