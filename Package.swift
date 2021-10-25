@@ -7,7 +7,7 @@ let package = Package(
     name: "LeetCode",
     products: [
         // Products define the executables and libraries a package produces, and make them visible to other packages.
-        .library(name: "LeetCode", targets: ["LeetCode"]),
+        .library(name: "LeetCode", targets: ["LeetCode"])
     ],
     dependencies: [
         // Dependencies declare other packages that this package depends on.
