@@ -32,8 +32,7 @@ final public class LinkedListNode<Element> {
     }
 }
 
-
-// MARK: -  Equatable
+// MARK: - Equatable
 extension LinkedListNode: Equatable where Element: Equatable {
     public static func == (lhs: LinkedListNode<Element>, rhs: LinkedListNode<Element>) -> Bool {
         guard lhs.val == rhs.val else {
@@ -43,7 +42,6 @@ extension LinkedListNode: Equatable where Element: Equatable {
         return lhs.next == rhs.next
     }
 }
-
 
 final public class LinkedList<Element> {
     var head: LinkedListNode<Element>?
