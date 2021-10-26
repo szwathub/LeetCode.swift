@@ -22,7 +22,7 @@ final class ContainerWithMostWaterSpec: XCTestCase {
         ]
     }
 
-    func testTwoSum() {
+    func testContainerWithMostWater() {
         let solution = ContainerWithMostWater()
         for question in questions {
             let parameter = question.parameter

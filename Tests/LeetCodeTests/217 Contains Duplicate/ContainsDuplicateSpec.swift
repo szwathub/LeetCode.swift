@@ -21,7 +21,7 @@ class ContainsDuplicateSpec: XCTestCase {
         ]
     }
 
-    func testDestinationCity() throws {
+    func testContainsDuplicate() throws {
         let solution = ContainsDuplicate()
         for question in questions {
             let parameter = question.parameter

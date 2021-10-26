@@ -20,12 +20,14 @@ class FizzBuzzSpec: XCTestCase {
             .init(parameter: .init(n: 5),
                      answer: ["1", "2", "Fizz", "4", "Buzz"]),
             .init(parameter: .init(n: 15),
-                     answer: ["1", "2", "Fizz", "4", "Buzz", "Fizz", "7", "8", "Fizz",
-                              "Buzz", "11", "Fizz", "13", "14", "FizzBuzz"])
+                     answer: [
+                        "1", "2", "Fizz", "4", "Buzz", "Fizz", "7", "8", "Fizz",
+                        "Buzz", "11", "Fizz", "13", "14", "FizzBuzz"
+                     ])
         ]
     }
 
-    func testDestinationCity() throws {
+    func testFizzBuzz() throws {
         let solution = FizzBuzz()
         for question in questions {
             let parameter = question.parameter
