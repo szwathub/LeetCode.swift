@@ -35,10 +35,10 @@ final class AddTwoNumbersSpec: XCTestCase {
         let solution = AddTwoNumbers()
         for question in questions {
             let parameter = question.parameter
-            let answer = solution.addTwoNumbers(LinkedList(parameter.l1).head,
-                                                LinkedList(parameter.l2).head)
+            let answer = solution.addTwoNumbers(SinglyLinkedList(parameter.l1).head,
+                                                SinglyLinkedList(parameter.l2).head)
 
-            XCTAssertTrue(answer == LinkedList(question.answer).head)
+            XCTAssertTrue(answer == SinglyLinkedList(question.answer).head)
         }
     }
 }
