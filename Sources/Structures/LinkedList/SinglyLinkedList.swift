@@ -11,26 +11,47 @@
 
 import Foundation
 
-final public class SinglyLinkedList<T> {
-    public class Node<T> {
-        public var value: T?
-        public var next: Node?
+final public class SinglyLinkedListNode<T> {
+    public var value: T?
+    public var next: SinglyLinkedListNode?
 
-        public init() {
-            self.value = nil
-            self.next = nil
-        }
-
-        public init(_ val: T) {
-            self.value = val
-            self.next = nil
-        }
-
-        public init(_ val: T?, _ next: Node?) {
-            self.value = val
-            self.next = next
-        }
+    public init() {
+        self.value = nil
+        self.next = nil
     }
+
+    public init(_ val: T) {
+        self.value = val
+        self.next = nil
+    }
+
+    public init(_ val: T?, _ next: SinglyLinkedListNode?) {
+        self.value = val
+        self.next = next
+    }
+}
+
+// MARK: - Equatable
+extension SinglyLinkedListNode: Equatable where T: Equatable {
+    public static func == (lhs: SinglyLinkedListNode<T>, rhs: SinglyLinkedListNode<T>) -> Bool {
+        var lhead: SinglyLinkedListNode? = lhs
+        var rhead: SinglyLinkedListNode? = rhs
+
+        while lhead != nil || rhead != nil {
+            if lhead == nil || rhead == nil || lhead?.value != rhead?.value {
+                return false
+            }
+
+            lhead = lhead?.next
+            rhead = rhead?.next
+        }
+
+        return true
+    }
+}
+
+final public class SinglyLinkedList<T> {
+    typealias Node = SinglyLinkedListNode
 
     var head: Node<T>?
     var tail: Node<T>?
@@ -59,7 +80,7 @@ final public class SinglyLinkedList<T> {
         tail = current
     }
 
-    public subscript(element: T) -> Node<T>? where T: Equatable {
+    subscript(element: T) -> Node<T>? where T: Equatable {
         var find = head
         while find != nil {
             if find?.value == element {
@@ -84,28 +105,6 @@ extension SinglyLinkedList: ExpressibleByArrayLiteral {
 // MARK: - Equatable
 extension SinglyLinkedList: Equatable where T: Equatable {
     public static func == (lhs: SinglyLinkedList<T>, rhs: SinglyLinkedList<T>) -> Bool {
-        var lhead = lhs.head
-        var rhead = rhs.head
-
-        while lhead != nil || rhead != nil {
-            if lhead == nil || rhead == nil {
-                return false
-            }
-
-            if lhead?.value != rhead?.value {
-                return false
-            }
-
-            lhead = lhead?.next
-            rhead = rhead?.next
-        }
-
-        return true
-    }
-}
-
-extension SinglyLinkedList.Node: Equatable where T: Equatable {
-    public static func == (lhs: SinglyLinkedList.Node<T>, rhs: SinglyLinkedList.Node<T>) -> Bool {
-        return lhs.value == rhs.value
+        return lhs.head == rhs.head
     }
 }
