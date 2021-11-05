@@ -6,6 +6,7 @@ disabled_rules:
   - nesting
   - identifier_name
   - switch_case_alignment
+  - type_name
 opt_in_rules:
   - yoda_condition
 
