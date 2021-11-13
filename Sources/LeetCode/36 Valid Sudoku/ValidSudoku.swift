@@ -24,7 +24,7 @@ class ValidSudoku {
                 }
 
                 let k = x / 3 * 3 + y / 3
-                let num = (Int(String(board[x][y] ))!) - 1
+                let num = (Int(String(board[x][y]))!) - 1
 
                 if line[x][num] != 0 || column[y][num] != 0 || block[k][num] != 0 {
                     return false
