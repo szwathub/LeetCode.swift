@@ -1,4 +1,6 @@
 //
+//  Copyright © 2021 Zhiwei Sun. All rights reserved.
+//
 //  File name: MaximumProductofWordLengths.swift
 //  Author:    Zhiwei Sun @szwathub
 //  E-mail:    szwathub@gmail.com

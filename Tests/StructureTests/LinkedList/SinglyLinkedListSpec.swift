@@ -1,6 +1,8 @@
 //
 //  
 //
+//  Copyright © 2021 Zhiwei Sun. All rights reserved.
+//
 //  File name: SinglyLinkedListSpec.swift
 //  Author:    Zhiwei Sun @szwathub
 //  E-mail:    szwathub@gmail.com
