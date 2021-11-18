@@ -13,21 +13,14 @@
 
 import Foundation
 
+// MARK: - SinglyLinkedListNode
 final public class SinglyLinkedListNode<T> {
+
     public var value: T?
+
     public var next: SinglyLinkedListNode?
 
-    public init() {
-        self.value = nil
-        self.next = nil
-    }
-
-    public init(_ val: T) {
-        self.value = val
-        self.next = nil
-    }
-
-    public init(_ val: T?, _ next: SinglyLinkedListNode?) {
+    public init(_ val: T? = nil, _ next: SinglyLinkedListNode? = nil) {
         self.value = val
         self.next = next
     }
@@ -52,6 +45,8 @@ extension SinglyLinkedListNode: Equatable where T: Equatable {
     }
 }
 
+// MARK: -
+// MARK: - SinglyLinkedList
 final public class SinglyLinkedList<T> {
     typealias Node = SinglyLinkedListNode
 

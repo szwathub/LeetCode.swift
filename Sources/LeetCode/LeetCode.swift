@@ -10,7 +10,20 @@ extension SinglyLinkedListNode: LeetCodeCompatible where T == Int {
             return value ?? 0
         }
         set {
-            self.value = newValue
+            value = newValue
+        }
+    }
+}
+
+typealias TreeNode = BinaryTreeNode<Int>
+
+extension BinaryTreeNode: LeetCodeCompatible where T == Int {
+    var val: Int {
+        get {
+            return value ?? 0
+        }
+        set {
+            value = newValue
         }
     }
 }
