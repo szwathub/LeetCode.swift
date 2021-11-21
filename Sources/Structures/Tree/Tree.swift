@@ -18,9 +18,10 @@ final public class Tree<T> {
         public var value: T?
 
         public weak var parent: Node?
+
         public var children = [Node]()
 
-        public init(_ value: T? = nil) {
+        public init(value: T? = nil) {
             self.value = value
         }
     }

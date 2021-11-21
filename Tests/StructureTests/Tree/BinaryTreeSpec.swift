@@ -20,7 +20,7 @@ class BinaryTreeSpec: XCTestCase {
         node.val = 11
         XCTAssertEqual(node.val, 11)
 
-        let node1 = TreeNode(10, node)
+        let node1 = TreeNode(value: 10, left: node)
         XCTAssertEqual(node1.val, 10)
     }
 }

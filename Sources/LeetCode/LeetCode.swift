@@ -15,9 +15,8 @@ extension SinglyLinkedListNode: LeetCodeCompatible where T == Int {
     }
 }
 
-typealias TreeNode = BinaryTreeNode<Int>
-
-extension BinaryTreeNode: LeetCodeCompatible where T == Int {
+typealias TreeNode = BinaryTree<Int>.Node
+extension BinaryTree.Node: LeetCodeCompatible where T == Int {
     var val: Int {
         get {
             return value ?? 0

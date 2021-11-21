@@ -13,28 +13,22 @@
 
 import Foundation
 
-// MARK: - BinaryTreeNode
-public class BinaryTreeNode<T> {
-
-    public var value: T?
-
-    public var left: BinaryTreeNode?
-
-    public var right: BinaryTreeNode?
-
-    public init(_ value: T? = nil, _ left: BinaryTreeNode? = nil, _ right: BinaryTreeNode? = nil) {
-        self.value = value
-        self.left = left
-        self.right = right
-    }
-}
-
-// MARK: -
-// MARK: - BinaryTree
 final public class BinaryTree<T> {
-    typealias Node = BinaryTreeNode
+    public class Node {
+        public var value: T?
 
-    var root: Node<T>?
+        public var left: Node?
+
+        public var right: Node?
+
+        public init(value: T? = nil, left: Node? = nil, right: Node? = nil) {
+            self.value = value
+            self.left = left
+            self.right = right
+        }
+    }
+
+    var root: Node?
 
     init() {
         root = nil
@@ -43,24 +37,24 @@ final public class BinaryTree<T> {
     convenience init(_ elements: [T?]) {
         self.init()
 
-        var stack = [Node<T>]()
+        var stack = [Node]()
         guard let value = elements.first else {
             return
         }
 
-        root = Node(value)
+        root = Node(value: value)
         stack.append(root!)
 
         for index in stride(from: 1, to: elements.count, by: 2) {
             let current = stack.removeFirst()
 
             if index < elements.count {
-                let left = Node(elements[index])
+                let left = Node(value: elements[index])
                 current.left = left
                 stack.append(left)
             }
             if index + 1 < elements.count {
-                let right = Node(elements[index + 1])
+                let right = Node(value: elements[index + 1])
                 current.right = right
                 stack.append(right)
             }
