@@ -26,10 +26,10 @@ class AddTwoNumbers {
             carry = sum / 10
 
             if head == nil {
-                head = ListNode(sum % 10)
+                head = ListNode(value: sum % 10)
                 tail = head
             } else {
-                tail?.next = ListNode(sum % 10)
+                tail?.next = ListNode(value: sum % 10)
                 tail = tail?.next
             }
 
@@ -38,7 +38,7 @@ class AddTwoNumbers {
         }
 
         if carry > 0 {
-            tail?.next = ListNode(carry)
+            tail?.next = ListNode(value: carry)
         }
 
         return head

@@ -34,7 +34,7 @@ final public class BinaryTree<T> {
         root = nil
     }
 
-    convenience init(_ elements: [T?]) {
+    convenience init(elements: [T?]) {
         self.init()
 
         var stack = [Node]()
@@ -62,11 +62,10 @@ final public class BinaryTree<T> {
     }
 }
 
-// MARK: - ExpressibleByArrayLiteral
 extension BinaryTree: ExpressibleByArrayLiteral {
     public typealias ArrayLiteralElement = T
 
     public convenience init(arrayLiteral elements: T...) {
-        self.init(elements)
+        self.init(elements: elements)
     }
 }

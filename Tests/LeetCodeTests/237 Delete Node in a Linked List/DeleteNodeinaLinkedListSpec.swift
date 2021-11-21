@@ -30,11 +30,11 @@ final class DeleteNodeinaLinkedListSpec: XCTestCase {
             let parameter = question.parameter
             let answer = question.answer
 
-            let list = SinglyLinkedList(parameter.head)
+            let list = SinglyLinkedList(elements:parameter.head)
             let node = list[parameter.node]
             solution.deleteNode(node)
 
-            XCTAssertTrue(list == SinglyLinkedList(answer))
+            XCTAssertTrue(list == SinglyLinkedList(elements: answer))
         }
     }
 }

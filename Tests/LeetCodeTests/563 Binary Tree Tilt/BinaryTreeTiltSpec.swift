@@ -24,7 +24,7 @@ final class BinaryTreeTiltSpec: XCTestCase {
         let solution = BinaryTreeTilt()
         for question in questions {
             solution.tilt = 0
-            let tree = BinaryTree(question.parameter.tree)
+            let tree = BinaryTree(elements: question.parameter.tree)
             let answer = question.answer
 
             XCTAssertEqual(solution.findTilt(tree.root), answer)

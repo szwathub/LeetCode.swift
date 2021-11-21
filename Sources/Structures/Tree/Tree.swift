@@ -26,7 +26,3 @@ final public class Tree<T> {
         }
     }
 }
-
-extension Tree.Node {
-
-}

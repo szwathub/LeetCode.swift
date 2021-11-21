@@ -26,9 +26,9 @@ class SinglyLinkedListSpec: XCTestCase {
 
     func testEqualable() {
         let literal: SinglyLinkedList = [8, 2, 10, 9, 7, 5]
-        XCTAssertTrue(literal == SinglyLinkedList([8, 2, 10, 9, 7, 5]))
-        XCTAssertFalse(literal == SinglyLinkedList([8, 2, 10, 9, 8, 5]))
-        XCTAssertFalse(literal == SinglyLinkedList([8, 2, 10, 9, 7]))
+        XCTAssertTrue(literal == SinglyLinkedList(elements: [8, 2, 10, 9, 7, 5]))
+        XCTAssertFalse(literal == SinglyLinkedList(elements: [8, 2, 10, 9, 8, 5]))
+        XCTAssertFalse(literal == SinglyLinkedList(elements: [8, 2, 10, 9, 7]))
     }
 
     func testSubscript() {
@@ -44,7 +44,7 @@ class SinglyLinkedListSpec: XCTestCase {
         node.val = 11
         XCTAssertEqual(node.val, 11)
 
-        let node1 = ListNode(10, node)
+        let node1 = ListNode(value: 10, next: node)
         XCTAssertEqual(node1.val, 10)
     }
 }

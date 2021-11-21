@@ -13,71 +13,46 @@
 
 import Foundation
 
-// MARK: - SinglyLinkedListNode
-final public class SinglyLinkedListNode<T> {
-
-    public var value: T?
-
-    public var next: SinglyLinkedListNode?
-
-    public init(_ val: T? = nil, _ next: SinglyLinkedListNode? = nil) {
-        self.value = val
-        self.next = next
-    }
-}
-
-// MARK: - Equatable
-extension SinglyLinkedListNode: Equatable where T: Equatable {
-    public static func == (lhs: SinglyLinkedListNode<T>, rhs: SinglyLinkedListNode<T>) -> Bool {
-        var lhead: SinglyLinkedListNode? = lhs
-        var rhead: SinglyLinkedListNode? = rhs
-
-        while lhead != nil || rhead != nil {
-            if lhead == nil || rhead == nil || lhead?.value != rhead?.value {
-                return false
-            }
-
-            lhead = lhead?.next
-            rhead = rhead?.next
-        }
-
-        return true
-    }
-}
-
-// MARK: -
-// MARK: - SinglyLinkedList
 final public class SinglyLinkedList<T> {
-    typealias Node = SinglyLinkedListNode
+    public class Node {
+        public var value: T?
 
-    var head: Node<T>?
-    var tail: Node<T>?
+        public var next: Node?
+
+        public init(value: T? = nil, next: Node? = nil) {
+            self.value = value
+            self.next = next
+        }
+    }
+
+    var head: Node?
+    var tail: Node?
 
     init() {
         head = nil
         tail = nil
     }
 
-    convenience init(_ elements: [T]) {
+    convenience init(elements: [T]) {
         self.init()
 
         var headSet = false
-        var current: Node<T>?
+        var current: Node?
 
         for element in elements {
             if headSet == false {
-                head = Node(element)
+                head = Node(value: element)
                 current = head
                 headSet = true
             } else {
-                current?.next = Node(element)
+                current?.next = Node(value: element)
                 current = current?.next
             }
         }
         tail = current
     }
 
-    subscript(element: T) -> Node<T>? where T: Equatable {
+    subscript(element: T) -> Node? where T: Equatable {
         var find = head
         while find != nil {
             if find?.value == element {
@@ -90,18 +65,34 @@ final public class SinglyLinkedList<T> {
     }
 }
 
-// MARK: - ExpressibleByArrayLiteral
 extension SinglyLinkedList: ExpressibleByArrayLiteral {
     public typealias ArrayLiteralElement = T
 
     public convenience init(arrayLiteral elements: T...) {
-        self.init(elements)
+        self.init(elements: elements)
     }
 }
 
-// MARK: - Equatable
 extension SinglyLinkedList: Equatable where T: Equatable {
     public static func == (lhs: SinglyLinkedList<T>, rhs: SinglyLinkedList<T>) -> Bool {
         return lhs.head == rhs.head
+    }
+}
+
+extension SinglyLinkedList.Node: Equatable where T: Equatable {
+    public static func == (lhs: SinglyLinkedList<T>.Node, rhs: SinglyLinkedList<T>.Node) -> Bool {
+        var lhead: SinglyLinkedList<T>.Node? = lhs
+        var rhead: SinglyLinkedList<T>.Node? = rhs
+
+        while lhead != nil || rhead != nil {
+            if lhead == nil || rhead == nil || lhead?.value != rhead?.value {
+                return false
+            }
+
+            lhead = lhead?.next
+            rhead = rhead?.next
+        }
+
+        return true
     }
 }

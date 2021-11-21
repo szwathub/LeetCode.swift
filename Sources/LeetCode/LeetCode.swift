@@ -1,10 +1,9 @@
-typealias ListNode = SinglyLinkedListNode<Int>
-
 protocol LeetCodeCompatible {
     var val: Int { get }
 }
 
-extension SinglyLinkedListNode: LeetCodeCompatible where T == Int {
+typealias ListNode = SinglyLinkedList<Int>.Node
+extension SinglyLinkedList.Node: LeetCodeCompatible where T == Int {
     var val: Int {
         get {
             return value ?? 0
