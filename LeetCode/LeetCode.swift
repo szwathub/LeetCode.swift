@@ -1,3 +1,5 @@
+import Structure
+
 protocol LeetCodeCompatible {
     var val: Int { get }
 }

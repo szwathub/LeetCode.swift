@@ -1,5 +1,6 @@
 import XCTest
 @testable import LeetCode
+@testable import Structure
 
 final class AddTwoNumbersSpec: XCTestCase {
 

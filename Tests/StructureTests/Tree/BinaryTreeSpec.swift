@@ -1,5 +1,6 @@
 import XCTest
 @testable import LeetCode
+@testable import Structure
 
 class BinaryTreeSpec: XCTestCase {
     func testEmptyBinaryTree() {

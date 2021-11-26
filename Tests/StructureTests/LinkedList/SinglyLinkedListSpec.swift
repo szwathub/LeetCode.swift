@@ -1,20 +1,6 @@
-//
-//  
-//
-//  Copyright © 2021 Zhiwei Sun. All rights reserved.
-//
-//  File name: SinglyLinkedListSpec.swift
-//  Author:    Zhiwei Sun @szwathub
-//  E-mail:    szwathub@gmail.com
-//
-//  Description:
-//
-//  History:
-//      2021/11/2: Created by szwathub on 2021/11/2
-//
-
 import XCTest
 @testable import LeetCode
+@testable import Structure
 
 class SinglyLinkedListSpec: XCTestCase {
     func testEmptyList() {
