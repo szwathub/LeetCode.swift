@@ -2,45 +2,21 @@ import XCTest
 @testable import LeetCode
 
 final class MergeSortedArraySpec: XCTestCase {
-    fileprivate struct Question {
-        struct Parameter {
-            var nums1: [Int]
-            var m: Int
-            var nums2: [Int]
-            var n: Int
-        }
 
-        var parameter: Parameter
-        var answer: [Int]
-    }
-
-    fileprivate var questions: [Question]!
-
-    override func setUp() {
-        questions = [
-            .init(parameter: .init(nums1: [1, 2, 3, 0, 0, 0], m: 3, nums2: [2, 5, 6], n: 3),
-                     answer: [1, 2, 2, 3, 5, 6]),
-            .init(parameter: .init(nums1: [1], m: 1, nums2: [], n: 0),
-                     answer: [1]),
-            .init(parameter: .init(nums1: [0], m: 0, nums2: [1], n: 1),
-                     answer: [1]),
-            .init(parameter: .init(nums1: [4, 0, 0, 0, 0, 0], m: 1, nums2: [1, 2, 3, 5, 6], n: 5),
-                     answer: [1, 2, 3, 4, 5, 6]),
-            .init(parameter: .init(nums1: [1, 2, 4, 5, 6, 0], m: 5, nums2: [3], n: 1),
-                     answer: [1, 2, 3, 4, 5, 6]),
-            .init(parameter: .init(nums1: [4, 5, 6, 0, 0, 0], m: 3, nums2: [1, 2, 3], n: 3),
-                     answer: [1, 2, 3, 4, 5, 6])
-        ]
-    }
+    fileprivate let questions: [(([Int], Int, [Int], Int), [Int])] = [
+        (([1, 2, 3, 0, 0, 0], 3, [2, 5, 6], 3), [1, 2, 2, 3, 5, 6]),
+        (([1], 1, [], 0), [1]),
+        (([0], 0, [1], 1), [1]),
+        (([4, 0, 0, 0, 0, 0], 1, [1, 2, 3, 5, 6], 5), [1, 2, 3, 4, 5, 6]),
+        (([1, 2, 4, 5, 6, 0], 5, [3], 1), [1, 2, 3, 4, 5, 6]),
+        (([4, 5, 6, 0, 0, 0], 3, [1, 2, 3], 3), [1, 2, 3, 4, 5, 6])
+    ]
 
     func testMergeSortedArray() {
         let solution = MergeSortedArray()
-        for question in questions {
-            var parameter = question.parameter
-            let answer = question.answer
-
-            solution.merge(&parameter.nums1, parameter.m, parameter.nums2, parameter.n)
-            XCTAssertEqual(parameter.nums1, answer)
+        for ((var nums1, m, nums2, n), answer) in questions {
+            solution.merge(&nums1, m, nums2, n)
+            XCTAssertEqual(nums1, answer)
         }
     }
 }

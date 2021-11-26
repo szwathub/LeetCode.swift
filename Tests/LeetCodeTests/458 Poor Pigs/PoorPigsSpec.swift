@@ -3,21 +3,15 @@ import XCTest
 
 final class PoorPigsSpec: XCTestCase {
 
-    fileprivate var questions = [((Int, Int, Int), Int)]()
+    fileprivate let questions: [((Int, Int, Int), Int)] = [
+        ((1000, 15, 60), 5),
+        ((4, 15, 15), 2),
+        ((4, 15, 30), 2)
+    ]
 
-    override func setUp() {
-        questions = [
-            ((1000, 15, 60), 5),
-            ((4, 15, 15), 2),
-            ((4, 15, 30), 2)
-        ]
-    }
-
-    func testPoorPigsSpec() {
+    func testPoorPigs() {
         let solution = PoorPigs()
-        for (parameter, answer) in questions {
-            let (buckets, minutesToDie, minutesToTest) = parameter
-
+        for ((buckets, minutesToDie, minutesToTest), answer) in questions {
             XCTAssertEqual(solution.poorPigs(buckets, minutesToDie, minutesToTest), answer)
         }
     }

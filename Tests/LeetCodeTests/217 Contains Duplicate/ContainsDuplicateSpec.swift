@@ -2,32 +2,17 @@ import XCTest
 @testable import LeetCode
 
 class ContainsDuplicateSpec: XCTestCase {
-    fileprivate struct Question {
-        struct Parameter {
-            var nums: [Int]
-        }
 
-        var parameter: Parameter
-        var answer: Bool
-    }
-
-    fileprivate var questions: [Question]!
-
-    override func setUp() {
-        questions = [
-            .init(parameter: .init(nums: [1, 2, 3, 1]), answer: true),
-            .init(parameter: .init(nums: [1, 2, 3, 4]), answer: false),
-            .init(parameter: .init(nums: [1, 1, 1, 3, 3, 4, 3, 2, 4, 2]), answer: true)
-        ]
-    }
+    fileprivate let questions: [(([Int]), Bool)] = [
+        (([1, 2, 3, 1]), true),
+        (([1, 2, 3, 4]), false),
+        (([1, 1, 1, 3, 3, 4, 3, 2, 4, 2]), true)
+    ]
 
     func testContainsDuplicate() throws {
         let solution = ContainsDuplicate()
-        for question in questions {
-            let parameter = question.parameter
-            let answer = question.answer
-
-            XCTAssertEqual(solution.containsDuplicate(parameter.nums), answer)
+        for ((nums), answer) in questions {
+            XCTAssertEqual(solution.containsDuplicate(nums), answer)
         }
     }
 }

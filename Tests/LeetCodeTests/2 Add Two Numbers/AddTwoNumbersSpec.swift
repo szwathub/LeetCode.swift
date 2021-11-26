@@ -2,43 +2,25 @@ import XCTest
 @testable import LeetCode
 
 final class AddTwoNumbersSpec: XCTestCase {
-    fileprivate struct Question {
-        struct Parameter {
-            var l1: [Int]
-            var l2: [Int]
-        }
 
-        var parameter: Parameter
-        var answer: [Int]
-    }
-
-    fileprivate var questions: [Question]!
-
-    override func setUp() {
-        questions = [
-            .init(parameter: .init(l1: [], l2: []), answer: []),
-            .init(parameter: .init(l1: [1], l2: [1]), answer: [2]),
-            .init(parameter: .init(l1: [1, 2, 3, 4], l2: [1, 2, 3, 4]),
-                     answer: [2, 4, 6, 8]),
-            .init(parameter: .init(l1: [1, 2, 3, 4, 5], l2: [1, 2, 3, 4, 5]),
-                     answer: [2, 4, 6, 8, 0, 1]),
-            .init(parameter: .init(l1: [1], l2: [9, 9, 9, 9, 9]),
-                     answer: [0, 0, 0, 0, 0, 1]),
-            .init(parameter: .init(l1: [9, 9, 9, 9, 9], l2: [1]),
-                     answer: [0, 0, 0, 0, 0, 1]),
-            .init(parameter: .init(l1: [2, 4, 3], l2: [5, 6, 4]), answer: [7, 0, 8]),
-            .init(parameter: .init(l1: [1, 8, 3], l2: [7, 1]), answer: [8, 9, 3])
-        ]
-    }
+    fileprivate let questions: [(([Int], [Int]), [Int])] = [
+        (([], []), []),
+        (([1], [1]), [2]),
+        (([1, 2, 3, 4], [1, 2, 3, 4]), [2, 4, 6, 8]),
+        (([1, 2, 3, 4, 5], [1, 2, 3, 4, 5]), [2, 4, 6, 8, 0, 1]),
+        (([1], [9, 9, 9, 9, 9]), [0, 0, 0, 0, 0, 1]),
+        (([9, 9, 9, 9, 9], [1]), [0, 0, 0, 0, 0, 1]),
+        (([2, 4, 3], [5, 6, 4]), [7, 0, 8]),
+        (([1, 8, 3], [7, 1]), [8, 9, 3])
+    ]
 
     func testAddTwoNumbers() {
         let solution = AddTwoNumbers()
-        for question in questions {
-            let parameter = question.parameter
-            let answer = solution.addTwoNumbers(SinglyLinkedList(elements: parameter.l1).head,
-                                                SinglyLinkedList(elements: parameter.l2).head)
+        for ((l1, l2), answer) in questions {
+            let node = solution.addTwoNumbers(SinglyLinkedList(elements: l1).head,
+                                              SinglyLinkedList(elements: l2).head)
 
-            XCTAssertTrue(answer == SinglyLinkedList(elements: question.answer).head)
+            XCTAssertTrue(node == SinglyLinkedList(elements: answer).head)
         }
     }
 }

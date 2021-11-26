@@ -2,36 +2,21 @@ import XCTest
 @testable import LeetCode
 
 final class ValidParenthesesSpec: XCTestCase {
-    fileprivate struct Question {
-        struct Parameter {
-            var s: String
-        }
 
-        var parameter: Parameter
-        var answer: Bool
-    }
-
-    fileprivate var questions: [Question]!
-
-    override func setUp() {
-        questions = [
-            .init(parameter: .init(s: "()"), answer: true),
-            .init(parameter: .init(s: "()[]{}"), answer: true),
-            .init(parameter: .init(s: "(]"), answer: false),
-            .init(parameter: .init(s: "([)]"), answer: false),
-            .init(parameter: .init(s: "{[]}"), answer: true),
-            .init(parameter: .init(s: "["), answer: false),
-            .init(parameter: .init(s: "[]}"), answer: false)
-        ]
-    }
+    fileprivate let questions: [((String), Bool)] = [
+        (("()"), true),
+        (("()[]{}"), true),
+        (("(]"), false),
+        (("([)]"), false),
+        (("{[]}"), true),
+        (("["), false),
+        (("[]}"), false)
+    ]
 
     func testValidParentheses() {
         let solution = ValidParentheses()
-        for question in questions {
-            let parameter = question.parameter
-            let answer = question.answer
-
-            XCTAssertEqual(solution.isValid(parameter.s), answer)
+        for ((s), answer) in questions {
+            XCTAssertEqual(solution.isValid(s), answer)
         }
     }
 }

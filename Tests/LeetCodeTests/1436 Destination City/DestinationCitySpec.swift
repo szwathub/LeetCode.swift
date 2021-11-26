@@ -2,33 +2,17 @@ import XCTest
 @testable import LeetCode
 
 class DestinationCitySpec: XCTestCase {
-    fileprivate struct Question {
-        struct Parameter {
-            var paths: [[String]]
-        }
 
-        var parameter: Parameter
-        var answer: String
-    }
-
-    fileprivate var questions: [Question]!
-
-    override func setUp() {
-        questions = [
-            .init(parameter: .init(paths: [["London", "New York"], ["New York", "Lima"], ["Lima", "Sao Paulo"]]),
-                     answer: "Sao Paulo"),
-            .init(parameter: .init(paths: [["B", "C"], ["D", "B"], ["C", "A"]]), answer: "A"),
-            .init(parameter: .init(paths: [["A", "Z"]]), answer: "Z")
-        ]
-    }
+    fileprivate let questions: [(([[String]]), String)] = [
+        (([["London", "New York"], ["New York", "Lima"], ["Lima", "Sao Paulo"]]), "Sao Paulo"),
+        (([["B", "C"], ["D", "B"], ["C", "A"]]), "A"),
+        (([["A", "Z"]]), "Z")
+    ]
 
     func testDestinationCity() throws {
         let solution = DestinationCity()
-        for question in questions {
-            let parameter = question.parameter
-            let answer = question.answer
-
-            XCTAssertEqual(solution.destCity(parameter.paths), answer)
+        for ((paths), answer) in questions {
+            XCTAssertEqual(solution.destCity(paths), answer)
         }
     }
 }
