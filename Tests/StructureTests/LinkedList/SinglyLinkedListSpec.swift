@@ -1,36 +1,39 @@
 import XCTest
-@testable import LeetCode
 @testable import Structure
 
 class SinglyLinkedListSpec: XCTestCase {
-    func testEmptyList() {
-        let linkList = SinglyLinkedList<Int>()
+    func testLinkedList() {
+        let link = SinglyLinkedList<Int>()
+        XCTAssertTrue(link.isEmpty)
+        XCTAssertNil(link.head)
+        XCTAssertNil(link.tail)
+        XCTAssertEqual(link.description, "")
 
-        XCTAssertNil(linkList.head)
-        XCTAssertNil(linkList.tail)
+        let literal: SinglyLinkedList = [8, 2, 10, 9, 7, 5]
+        let description = "(8) --> (2) --> (10) --> (9) --> (7) --> (5)"
+        XCTAssertEqual(literal.description, description)
     }
 
-    func testEqualable() {
+    func testNodeEqualable() {
         let literal: SinglyLinkedList = [8, 2, 10, 9, 7, 5]
-        XCTAssertTrue(literal == SinglyLinkedList(elements: [8, 2, 10, 9, 7, 5]))
-        XCTAssertFalse(literal == SinglyLinkedList(elements: [8, 2, 10, 9, 8, 5]))
-        XCTAssertFalse(literal == SinglyLinkedList(elements: [8, 2, 10, 9, 7]))
+        XCTAssertTrue(literal.head == SinglyLinkedList([8, 2, 10, 9, 7, 5]).head)
+        XCTAssertFalse(literal.head == SinglyLinkedList([8, 2, 10, 9, 8, 5]).head)
+        XCTAssertFalse(literal.head == SinglyLinkedList([8, 2, 10, 9, 7]).head)
     }
 
-    func testSubscript() {
+    func testSearchNode() {
         let literal: SinglyLinkedList = [8, 2, 10, 9, 7, 5]
-        XCTAssertNil(literal[11])
-        XCTAssertEqual(literal[2]?.val, 2)
+        if let head = literal.head {
+            XCTAssertNil(head.firstNode(of: 11))
+            let find = head.firstNode(of: 2)
+            XCTAssertEqual(find?.value, 2)
+        }
     }
 
     func testLinkedListNode() {
-        let node = ListNode()
-        XCTAssertNil(node.value)
-        XCTAssertEqual(node.val, 0)
-        node.val = 11
-        XCTAssertEqual(node.val, 11)
-
-        let node1 = ListNode(value: 10, next: node)
-        XCTAssertEqual(node1.val, 10)
+        let node = SinglyLinkedList<Int>.Node(value: 0)
+        XCTAssertEqual(node.value, 0)
+        node.value = 11
+        XCTAssertEqual(node.value, 11)
     }
 }

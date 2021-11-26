@@ -1,8 +1,8 @@
 import XCTest
-@testable import LeetCode
 @testable import Structure
 
 class BinaryTreeSpec: XCTestCase {
+
     func testEmptyBinaryTree() {
         let tree = BinaryTree<Int>()
         XCTAssertNil(tree.root)
@@ -11,17 +11,21 @@ class BinaryTreeSpec: XCTestCase {
         XCTAssertNil(empty.root)
 
         let literal: BinaryTree = [8, 2, 10, 9, 7, 5]
-        XCTAssertEqual(literal.root?.val, 8)
+        XCTAssertEqual(literal.root?.value, 8)
     }
 
     func testBinaryTreeNode() {
-        let node = TreeNode()
-        XCTAssertNil(node.value)
-        XCTAssertEqual(node.val, 0)
-        node.val = 11
-        XCTAssertEqual(node.val, 11)
+        let node = BinaryTree<Int>.Node(value: 10)
+        node.value = 11
+        XCTAssertEqual(node.value, 11)
+    }
 
-        let node1 = TreeNode(value: 10, left: node)
-        XCTAssertEqual(node1.val, 10)
+    func testBinaryTreeNodeEquatable() {
+        let literal: BinaryTree = [8, 2, 10, 9, 7, 5]
+        let equte = BinaryTree(elements: [8, 2, 10, 9, 7, 5])
+        XCTAssertTrue(literal.root == equte.root)
+
+        let tree: BinaryTree = [8, 10, 9, 7, 5]
+        XCTAssertFalse(literal.root == tree.root)
     }
 }

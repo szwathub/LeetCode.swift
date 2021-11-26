@@ -15,13 +15,13 @@ import Foundation
 
 final public class BinaryTree<T> {
     public class Node {
-        public var value: T?
+        public var value: T
 
         public var left: Node?
 
         public var right: Node?
 
-        public init(value: T? = nil, left: Node? = nil, right: Node? = nil) {
+        public init(value: T, left: Node? = nil, right: Node? = nil) {
             self.value = value
             self.left = left
             self.right = right
@@ -38,7 +38,7 @@ final public class BinaryTree<T> {
         self.init()
 
         var stack = [Node]()
-        guard let value = elements.first else {
+        guard let first = elements.first, let value = first else {
             return
         }
 
@@ -48,13 +48,13 @@ final public class BinaryTree<T> {
         for index in stride(from: 1, to: elements.count, by: 2) {
             let current = stack.removeFirst()
 
-            if index < elements.count {
-                let left = Node(value: elements[index])
+            if index < elements.count, let value = elements[index] {
+                let left = Node(value: value)
                 current.left = left
                 stack.append(left)
             }
-            if index + 1 < elements.count {
-                let right = Node(value: elements[index + 1])
+            if index + 1 < elements.count, let value = elements[index + 1] {
+                let right = Node(value: value)
                 current.right = right
                 stack.append(right)
             }
@@ -67,5 +67,15 @@ extension BinaryTree: ExpressibleByArrayLiteral {
 
     public convenience init(arrayLiteral elements: T...) {
         self.init(elements: elements)
+    }
+}
+
+extension BinaryTree.Node: Equatable where T: Equatable {
+    public static func == (lhs: BinaryTree<T>.Node, rhs: BinaryTree<T>.Node) -> Bool {
+        if lhs.value == rhs.value && lhs.left == rhs.left && lhs.right == rhs.right {
+            return true
+        }
+
+        return false
     }
 }

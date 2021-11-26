@@ -15,13 +15,13 @@ import Foundation
 
 final public class Tree<T> {
     public class Node {
-        public var value: T?
+        public var value: T
 
         public weak var parent: Node?
 
         public var children = [Node]()
 
-        public init(value: T? = nil) {
+        public init(value: T) {
             self.value = value
         }
     }

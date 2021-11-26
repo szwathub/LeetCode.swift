@@ -15,12 +15,11 @@ final class DeleteNodeinaLinkedListSpec: XCTestCase {
     func testDeleteNodeinaLinkedList() {
         let solution = DeleteNodeinaLinkedList()
         for ((head, node), answer) in questions {
+            let list = SinglyLinkedList(head)
+            let find = list.head?.firstNode(of: node)
+            solution.deleteNode(find)
 
-            let list = SinglyLinkedList(elements: head)
-            let node = list[node]
-            solution.deleteNode(node)
-
-            XCTAssertTrue(list == SinglyLinkedList(elements: answer))
+            XCTAssertTrue(list.head == SinglyLinkedList(answer).head)
         }
     }
 }

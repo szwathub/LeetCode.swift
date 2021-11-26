@@ -18,10 +18,10 @@ final class AddTwoNumbersSpec: XCTestCase {
     func testAddTwoNumbers() {
         let solution = AddTwoNumbers()
         for ((l1, l2), answer) in questions {
-            let node = solution.addTwoNumbers(SinglyLinkedList(elements: l1).head,
-                                              SinglyLinkedList(elements: l2).head)
+            let node = solution.addTwoNumbers(SinglyLinkedList(l1).head,
+                                              SinglyLinkedList(l2).head)
 
-            XCTAssertTrue(node == SinglyLinkedList(elements: answer).head)
+            XCTAssertTrue(node == SinglyLinkedList(answer).head)
         }
     }
 }

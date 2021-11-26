@@ -1,13 +1,12 @@
 import XCTest
-@testable import LeetCode
+@testable import Structure
 
 class TreeSpec: XCTestCase {
     func testTreeNode() {
-        let node = Node()
-        XCTAssertNil(node.value)
-        XCTAssertEqual(node.val, 0)
-        node.val = 11
-        XCTAssertEqual(node.val, 11)
-    }
+        let node = Tree<Int>.Node(value: 10)
+        XCTAssertEqual(node.value, 10)
 
+        node.value = 11
+        XCTAssertEqual(node.value, 11)
+    }
 }
