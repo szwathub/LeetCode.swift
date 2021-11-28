@@ -11,8 +11,6 @@
 //      2021/11/1: Created by szwathub on 2021/11/1
 //
 
-import Foundation
-
 class VersionControl {
     var bad: Int
 

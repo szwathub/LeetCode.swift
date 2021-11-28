@@ -11,8 +11,6 @@
 //      2021/10/27: Created by szwathub on 2021/10/27
 //
 
-import Foundation
-
 class MergeSortedArray {
     func merge(_ nums1: inout [Int], _ m: Int, _ nums2: [Int], _ n: Int) {
         var pm = m - 1

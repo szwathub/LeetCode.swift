@@ -11,8 +11,6 @@
 //      2021/10/19: Created by szwathub on 2021/10/19
 //
 
-import Foundation
-
 class ReverseInteger {
     func reverse(_ x: Int) -> Int {
         var x = x

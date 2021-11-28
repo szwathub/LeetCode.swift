@@ -11,8 +11,6 @@
 //      2021/10/31: Created by szwathub on 2021/10/31
 //
 
-import Foundation
-
 class KeyboardRow {
     func findWords(_ words: [String]) -> [String] {
         let set1 = Set("qwertyuiop")

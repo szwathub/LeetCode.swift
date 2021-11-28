@@ -11,8 +11,6 @@
 //      2021/10/29: Created by szwathub on 2021/10/29
 //
 
-import Foundation
-
 class SelfCrossing {
     func isSelfCrossing(_ distance: [Int]) -> Bool {
         guard distance.count >= 4 else {

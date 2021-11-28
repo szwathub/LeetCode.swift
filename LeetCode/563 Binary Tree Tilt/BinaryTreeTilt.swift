@@ -11,8 +11,6 @@
 //      2021/11/18: Created by szwathub on 2021/11/18
 //
 
-import Foundation
-
 class BinaryTreeTilt {
     public var tilt: Int = 0
 

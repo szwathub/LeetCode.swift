@@ -11,8 +11,6 @@
 //      2021/10/27: Created by szwathub on 2021/10/27
 //
 
-import Foundation
-
 class PascalsTriangle {
     func generate(_ numRows: Int) -> [[Int]] {
         var answer = [[Int]]()

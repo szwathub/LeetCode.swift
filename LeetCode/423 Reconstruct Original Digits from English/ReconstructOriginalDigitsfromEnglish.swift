@@ -11,8 +11,6 @@
 //      2021/11/24: Created by szwathub on 2021/11/24
 //
 
-import Foundation
-
 class ReconstructOriginalDigitsfromEnglish {
     func originalDigits(_ s: String) -> String {
         var dict = [Character: Int]()

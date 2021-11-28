@@ -11,8 +11,6 @@
 //      2021/10/25: Created by szwathub on 2021/10/25
 //
 
-import Foundation
-
 class MinStack {
     var stack = [Int]()
     var minstack = [Int]()

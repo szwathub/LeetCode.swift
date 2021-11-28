@@ -11,8 +11,6 @@
 //      2021/11/14: Created by szwathub on 2021/11/14
 //
 
-import Foundation
-
 class ValidAnagram {
     func isAnagram(_ s: String, _ t: String) -> Bool {
         guard s.count == t.count else {

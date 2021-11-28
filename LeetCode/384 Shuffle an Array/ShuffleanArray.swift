@@ -11,8 +11,6 @@
 //      2021/11/22: Created by szwathub on 2021/11/22
 //
 
-import Foundation
-
 class ShuffleanArray {
     var nums: [Int]
 

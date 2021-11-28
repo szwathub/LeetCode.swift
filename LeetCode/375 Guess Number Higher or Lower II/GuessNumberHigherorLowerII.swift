@@ -11,8 +11,6 @@
 //      2021/11/12: Created by szwathub on 2021/11/12
 //
 
-import Foundation
-
 class GuessNumberHigherorLowerII {
     func getMoneyAmount(_ n: Int) -> Int {
         // dp[i][j] 表示在区间[i, j]内确保胜利的最少金额

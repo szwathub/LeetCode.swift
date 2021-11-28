@@ -11,8 +11,6 @@
 //      2021/11/6: Created by szwathub on 2021/11/6
 //
 
-import Foundation
-
 class MissingNumber {
     func missingNumber(_ nums: [Int]) -> Int {
         var xor = 0

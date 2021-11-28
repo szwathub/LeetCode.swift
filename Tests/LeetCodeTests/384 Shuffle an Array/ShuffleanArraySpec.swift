@@ -1,7 +1,7 @@
 import XCTest
 @testable import LeetCode
 
-class ShuffleanArraySpec: XCTestCase {
+final class ShuffleanArraySpec: XCTestCase {
 
     func testShuffleanArray() {
         let solution = ShuffleanArray([1, 2, 3])

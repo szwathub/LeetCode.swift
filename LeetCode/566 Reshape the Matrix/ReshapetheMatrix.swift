@@ -11,8 +11,6 @@
 //      2021/10/28: Created by szwathub on 2021/10/28
 //
 
-import Foundation
-
 class ReshapetheMatrix {
     func matrixReshape(_ mat: [[Int]], _ r: Int, _ c: Int) -> [[Int]] {
         let m = mat.count

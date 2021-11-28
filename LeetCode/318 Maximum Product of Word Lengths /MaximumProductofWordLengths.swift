@@ -11,8 +11,6 @@
 //      2021/11/17: Created by szwathub on 2021/11/17
 //
 
-import Foundation
-
 class MaximumProductofWordLengths {
     func maxProduct(_ words: [String]) -> Int {
         let base = Character("a").asciiValue!

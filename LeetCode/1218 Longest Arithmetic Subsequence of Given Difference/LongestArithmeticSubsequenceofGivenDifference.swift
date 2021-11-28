@@ -11,8 +11,6 @@
 //      2021/11/5: Created by szwathub on 2021/11/5
 //
 
-import Foundation
-
 class LongestArithmeticSubsequenceofGivenDifference {
     func longestSubsequence(_ arr: [Int], _ difference: Int) -> Int {
         var dict = [Int: Int]()

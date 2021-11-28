@@ -1,7 +1,7 @@
 import XCTest
 @testable import LeetCode
 
-class FizzBuzzSpec: XCTestCase {
+final class FizzBuzzSpec: XCTestCase {
 
     fileprivate let questions: [((Int), [String])] = [
         ((3), ["1", "2", "Fizz"]),

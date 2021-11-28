@@ -11,8 +11,6 @@
 //      2021/10/31: Created by szwathub on 2021/10/31
 //
 
-import Foundation
-
 class HouseRobber {
     func rob(_ nums: [Int]) -> Int {
         guard nums.count > 1 else {

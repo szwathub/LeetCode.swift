@@ -11,8 +11,6 @@
 //      2021/11/2: Created by szwathub on 2021/11/2
 //
 
-import Foundation
-
 class BestTimetoBuyandSellStock {
     func maxProfit(_ prices: [Int]) -> Int {
         var minprice = Int.max

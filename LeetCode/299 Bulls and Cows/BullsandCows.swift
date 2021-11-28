@@ -11,8 +11,6 @@
 //      2021/11/8: Created by szwathub on 2021/11/8
 //
 
-import Foundation
-
 class BullsandCows {
     func getHint(_ secret: String, _ guess: String) -> String {
         var bulls = 0, cows = 0

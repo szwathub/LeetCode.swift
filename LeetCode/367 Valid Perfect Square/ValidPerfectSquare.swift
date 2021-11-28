@@ -11,8 +11,6 @@
 //      2021/11/4: Created by szwathub on 2021/11/4
 //
 
-import Foundation
-
 class ValidPerfectSquare {
     func isPerfectSquare(_ num: Int) -> Bool {
         var left = 0, right = num

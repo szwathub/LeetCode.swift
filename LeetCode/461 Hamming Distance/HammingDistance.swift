@@ -11,8 +11,6 @@
 //      2021/10/27: Created by szwathub on 2021/10/27
 //
 
-import Foundation
-
 class HammingDistance {
     func hammingDistance(_ x: Int, _ y: Int) -> Int {
         var xor = x ^ y

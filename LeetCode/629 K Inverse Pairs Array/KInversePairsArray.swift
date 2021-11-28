@@ -11,8 +11,6 @@
 //      2021/11/11: Created by szwathub on 2021/11/11
 //
 
-import Foundation
-
 class KInversePairsArray {
     private let MOD: Int = 1000000007
 

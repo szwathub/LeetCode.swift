@@ -11,8 +11,6 @@
 //      2021/10/30: Created by szwathub on 2021/10/30
 //
 
-import Foundation
-
 class SingleNumberIII {
     func singleNumber(_ nums: [Int]) -> [Int] {
         var xor = 0

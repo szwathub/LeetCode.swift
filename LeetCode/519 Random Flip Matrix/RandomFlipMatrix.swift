@@ -11,8 +11,6 @@
 //      2021/11/27: Created by szwathub on 2021/11/27
 //
 
-import Foundation
-
 class RandomFlipMatrix {
 
     private var m: Int

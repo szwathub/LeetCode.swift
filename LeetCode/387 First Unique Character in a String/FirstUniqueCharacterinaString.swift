@@ -11,8 +11,6 @@
 //      2021/11/14: Created by szwathub on 2021/11/14
 //
 
-import Foundation
-
 class FirstUniqueCharacterinaString {
     func firstUniqChar(_ s: String) -> Int {
         var dict = [Character: Int]()

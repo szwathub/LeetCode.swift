@@ -1,7 +1,7 @@
 import XCTest
 @testable import LeetCode
 
-class ContainsDuplicateSpec: XCTestCase {
+final class ContainsDuplicateSpec: XCTestCase {
 
     fileprivate let questions: [(([Int]), Bool)] = [
         (([1, 2, 3, 1]), true),

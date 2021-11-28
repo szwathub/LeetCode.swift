@@ -11,8 +11,6 @@
 //      2021/11/14: Created by szwathub on 2021/11/14
 //
 
-import Foundation
-
 class MapSum {
 
     var dict: [String: Int]

@@ -11,8 +11,6 @@
 //      2021/11/3: Created by szwathub on 2021/11/3
 //
 
-import Foundation
-
 class TrappingRainWater {
     func trap(_ height: [Int]) -> Int {
         var left = 0, right = height.count - 1

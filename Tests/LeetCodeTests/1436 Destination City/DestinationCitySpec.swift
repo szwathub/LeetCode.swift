@@ -1,7 +1,7 @@
 import XCTest
 @testable import LeetCode
 
-class DestinationCitySpec: XCTestCase {
+final class DestinationCitySpec: XCTestCase {
 
     fileprivate let questions: [(([[String]]), String)] = [
         (([["London", "New York"], ["New York", "Lima"], ["Lima", "Sao Paulo"]]), "Sao Paulo"),

@@ -11,8 +11,6 @@
 //      2021/11/13: Created by szwathub on 2021/11/13
 //
 
-import Foundation
-
 class LongestIncreasingSubsequence {
     func lengthOfLIS(_ nums: [Int]) -> Int {
         guard !nums.isEmpty else {

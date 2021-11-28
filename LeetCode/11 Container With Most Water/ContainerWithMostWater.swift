@@ -11,8 +11,6 @@
 //      2021/10/26: Created by szwathub on 2021/10/26
 //
 
-import Foundation
-
 class ContainerWithMostWater {
     /// Time Complexity: O(n), Space Complexity: O(1)
     func maxArea(_ height: [Int]) -> Int {

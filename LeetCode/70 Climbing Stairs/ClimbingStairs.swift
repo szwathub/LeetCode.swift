@@ -11,8 +11,6 @@
 //      2021/10/31: Created by szwathub on 2021/10/31
 //
 
-import Foundation
-
 class ClimbingStairs {
     func climbStairs(_ n: Int) -> Int {
         guard n > 2 else {

@@ -11,8 +11,6 @@
 //      2021/11/18: Created by szwathub on 2021/11/18
 //
 
-import Foundation
-
 final public class BinaryTree<T> {
     public class Node {
         public var value: T

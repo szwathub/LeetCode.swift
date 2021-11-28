@@ -11,8 +11,6 @@
 //      2021/10/20: Created by szwathub on 2021/10/20
 //
 
-import Foundation
-
 final public class SinglyLinkedList<T> {
     public class Node {
         public var value: T

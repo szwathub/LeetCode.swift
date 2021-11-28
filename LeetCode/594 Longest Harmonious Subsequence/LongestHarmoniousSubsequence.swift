@@ -11,8 +11,6 @@
 //      2021/11/20: Created by szwathub on 2021/11/20
 //
 
-import Foundation
-
 class LongestHarmoniousSubsequence {
     func findLHS(_ nums: [Int]) -> Int {
         var count = [Int: Int]()

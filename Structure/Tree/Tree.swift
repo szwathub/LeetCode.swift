@@ -11,8 +11,6 @@
 //      2021/11/21: Created by szwathub on 2021/11/21
 //
 
-import Foundation
-
 final public class Tree<T> {
     public class Node {
         public var value: T

@@ -11,8 +11,6 @@
 //      2021/10/13: Created by szwathub on 2021/10/13
 //
 
-import Foundation
-
 class FizzBuzz {
     func fizzBuzz(_ n: Int) -> [String] {
         var ans: [String] = []

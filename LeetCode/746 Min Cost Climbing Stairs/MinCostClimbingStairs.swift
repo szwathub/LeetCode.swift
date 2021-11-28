@@ -11,8 +11,6 @@
 //      2021/11/13: Created by szwathub on 2021/11/13
 //
 
-import Foundation
-
 class MinCostClimbingStairs {
     func minCostClimbingStairs(_ cost: [Int]) -> Int {
         guard cost.count >= 2 else {

@@ -11,8 +11,6 @@
 //      2021/1/9: Created by szwathub on 2021/1/9
 //
 
-import Foundation
-
 class TwoSum {
     /// Time Complexity: O(n), Space Complexity: O(n)
     func twoSum(_ nums: [Int], _ target: Int) -> [Int] {

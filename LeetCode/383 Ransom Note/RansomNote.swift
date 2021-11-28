@@ -11,8 +11,6 @@
 //      2021/11/14: Created by szwathub on 2021/11/14
 //
 
-import Foundation
-
 class RansomNote {
     func canConstruct(_ ransomNote: String, _ magazine: String) -> Bool {
         guard magazine.count >= ransomNote.count else {

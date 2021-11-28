@@ -11,8 +11,6 @@
 //      2021/10/26: Created by szwathub on 2021/10/26
 //
 
-import Foundation
-
 class MaximumSubarray {
     func maxSubArray(_ nums: [Int]) -> Int {
         guard !nums.isEmpty else {

@@ -11,8 +11,6 @@
 //      2021/11/9: Created by szwathub on 2021/11/9
 //
 
-import Foundation
-
 class ValidSudoku {
     func isValidSudoku(_ board: [[Character]]) -> Bool {
         var line = [[Int]](repeating: [Int](repeating: 0, count: 9), count: 9)

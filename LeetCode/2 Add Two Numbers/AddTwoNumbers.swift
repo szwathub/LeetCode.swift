@@ -11,8 +11,6 @@
 //      2021/2/4: Created by szwathub on 2021/2/4
 //
 
-import Foundation
-
 class AddTwoNumbers {
     func addTwoNumbers(_ l1: ListNode?, _ l2: ListNode?) -> ListNode? {
         var head: ListNode?

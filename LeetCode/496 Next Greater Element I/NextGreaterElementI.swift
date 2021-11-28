@@ -11,8 +11,6 @@
 //      2021/10/26: Created by szwathub on 2021/10/26
 //
 
-import Foundation
-
 class NextGreaterElementI {
     func nextGreaterElement(_ nums1: [Int], _ nums2: [Int]) -> [Int] {
         var answer = [Int]()
