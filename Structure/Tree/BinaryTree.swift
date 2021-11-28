@@ -77,7 +77,7 @@ final public class BinaryTree<T> {
     ///     // Prints "{value: Magenta, left = {value: Vermillion}, right = {value: Gold}}"
     ///
     /// - Parameter sequence: The sequence of elements to turn into an binary tree.
-    public convenience init<S>(_ sequence: S) where Optional<T> == S.Element, S: Sequence {
+    public convenience init<S>(_ sequence: S) where T? == S.Element, S: Sequence {
         self.init()
 
         var stack = [Node]()

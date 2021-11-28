@@ -19,8 +19,6 @@ extension SinglyLinkedList.Node: LeetCodeCompatible where T == Int {
 typealias TreeNode = BinaryTree<Int>.Node
 extension BinaryTree.Node: LeetCodeCompatible where T == Int {
     var val: Int {
-        get {
-            return value
-        }
+        return value
     }
 }
