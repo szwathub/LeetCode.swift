@@ -14,7 +14,7 @@
 class MaximumSumof3NonOverlappingSubarrays {
     func maxSumOfThreeSubarrays(_ nums: [Int], _ k: Int) -> [Int] {
         var answer = [Int]()
-        var sum1 = 0, maxSum1 = 0,  maxSum1Index = 0
+        var sum1 = 0, maxSum1 = 0, maxSum1Index = 0
         var sum2 = 0, maxSum12 = 0, maxSum12Index = (0, 0)
         var sum3 = 0, maxTotal = 0
 
