@@ -53,12 +53,12 @@ public struct Heap<Element> {
         }
     }
 
-    /// Returns the maximum value in the heap (for a max-heap) or the minimum value (for a min-heap).
+    /// Returns the maximum element in the heap (for a max-heap) or the minimum element (for a min-heap).
     public func peek() -> Element? {
         elements.first
     }
 
-    /// Adds a new value to the heap. This reorders the heap so that the max-heap
+    /// Adds a new element to the heap. This reorders the heap so that the max-heap
     /// or min-heap property still holds.
     ///
     /// - Parameter element: The element added into heap.
@@ -68,7 +68,7 @@ public struct Heap<Element> {
         shiftUp(elements.count - 1)
     }
 
-    /// Adds a sequence of values to the heap. This reorders the heap so that
+    /// Adds a sequence of elements to the heap. This reorders the heap so that
     /// the max-heap or min-heap property still holds
     ///
     /// - Complexity: O(*logn*)
@@ -78,7 +78,7 @@ public struct Heap<Element> {
         }
     }
 
-    /// Changes the values at the index with the given element.
+    /// Changes the element at the index with the given element.
     ///
     /// - Parameters:
     ///   - element: The given element to replace.
@@ -93,7 +93,7 @@ public struct Heap<Element> {
     }
 
     /// Removes and returns the root element from the heap. For a max-heap, this is the maximum
-    /// value; for a min-heap it is the minimum value.
+    /// element; for a min-heap it is the minimum element.
     ///
     /// - Returns: Returns the root element from the heap.
     /// - Complexity: O(*logn*)
