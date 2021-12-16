@@ -26,7 +26,7 @@ class CourseScheduleIII {
                 total += duration
                 queue.enqueue(duration)
             } else if !queue.isEmpty && queue.peek()! > duration {
-                total -= queue.peek()! - duration;
+                total -= queue.peek()! - duration
                 queue.dequeue()
                 queue.enqueue(duration)
             }
