@@ -20,10 +20,8 @@ class FindtheTownJudge {
             judge[item[1]] += 1
         }
 
-        for index in 1..<judge.count {
-            if judge[index] == n - 1 {
-                return index
-            }
+        for index in 1..<judge.count where judge[index] == n - 1 {
+            return index
         }
 
         return -1
