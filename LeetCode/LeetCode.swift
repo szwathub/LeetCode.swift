@@ -6,6 +6,10 @@ protocol LeetCodeCompatible {
 
 typealias ListNode = SinglyLinkedList<Int>.Node
 extension SinglyLinkedList.Node: LeetCodeCompatible where T == Int {
+    public convenience init(_ val: Int) {
+        self.init(value: val, next: nil)
+    }
+
     var val: Int {
         get {
             return value
