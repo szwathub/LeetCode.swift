@@ -61,7 +61,7 @@ public struct Heap<Element> {
     /// Adds a new element to the heap. This reorders the heap so that the max-heap
     /// or min-heap property still holds.
     ///
-    /// - Parameter element: The element added into heap.
+    /// - Parameter element: The element to append to heap.
     /// - Complexity: O(*logn*)
     public mutating func insert(_ element: Element) {
         elements.append(element)

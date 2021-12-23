@@ -51,7 +51,7 @@ public struct PriorityQueue<Element> {
 
     /// Adds a new element to the front of the priority queue.
     ///
-    /// - Parameter element: The element added into priority queue.
+    /// - Parameter element: The element to append to priority queue.
     public mutating func enqueue(_ element: Element) {
         heap.insert(element)
     }
