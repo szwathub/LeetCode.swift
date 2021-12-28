@@ -18,13 +18,13 @@ class FriendsOfAppropriateAges {
         var left = 0, right = 0, ans = 0
 
         for age in sortrd where age >= 15 {
-            while (2 * sortrd[left] <= age + 14) {
+            while 2 * sortrd[left] <= age + 14 {
                 left += 1
             }
-            while (right + 1 < count && sortrd[right + 1] <= age) {
+            while right + 1 < count && sortrd[right + 1] <= age {
                 right += 1
             }
-            ans += right - left;
+            ans += right - left
         }
 
         return ans
