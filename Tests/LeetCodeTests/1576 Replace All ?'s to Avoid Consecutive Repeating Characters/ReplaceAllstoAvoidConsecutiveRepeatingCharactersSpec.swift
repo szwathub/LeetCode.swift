@@ -6,7 +6,7 @@ final class ReplaceAllstoAvoidConsecutiveRepeatingCharactersSpec: XCTestCase {
     fileprivate let questions: [((String), String)] = [
         (("?zs"), "azs"),
         (("ubv?w"), "ubvaw"),
-        (("uba?w"), "ubabw"),
+        (("uba?w"), "ubabw")
     ]
 
     func testReplaceAllstoAvoidConsecutiveRepeatingCharacters() {
