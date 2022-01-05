@@ -13,26 +13,21 @@
 
 class ReplaceAllstoAvoidConsecutiveRepeatingCharacters {
     func modifyString(_ s: String) -> String {
-        var ans = [Character]()
-        let list = Array(s)
+        var list = Array(s)
 
-        for (index, character) in list.enumerated() {
-            if character != "?" {
-                ans.append(character)
-            } else {
-                for replace in "abcdefghijklmnopqrstuvwxyz" {
-                    if (index > 0 && list[index - 1] == replace)
-                        || (index < s.count - 1 && list[index + 1] == replace) {
+        for (index, character) in list.enumerated() where character == "?" {
+            for replace in "abcdefghijklmnopqrstuvwxyz" {
+                if (index > 0 && list[index - 1] == replace)
+                    || (index < s.count - 1 && list[index + 1] == replace) {
 
-                        continue
-                    }
-
-                    ans.append(replace)
-                    break
+                    continue
                 }
+
+                list[index] = replace
+                break
             }
         }
 
-        return String(ans)
+        return String(list)
     }
 }
