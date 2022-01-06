@@ -202,3 +202,61 @@ extension BinaryTree.Node: CustomStringConvertible {
         return string
     }
 }
+
+extension BinaryTree.Node {
+    func preorderTraversal(_ body: (T) -> Void) {
+        var stack = [BinaryTree.Node]()
+        var node: BinaryTree.Node? = self
+
+        while !stack.isEmpty || node != nil {
+            while let current = node {
+                body(current.value)
+                stack.append(current)
+                node = current.left
+            }
+
+            node = stack.popLast()
+            node = node?.right
+        }
+    }
+
+    func inorderTraversal(_ body: (T) -> Void) {
+        var stack = [BinaryTree.Node]()
+        var node: BinaryTree.Node? = self
+
+        while !stack.isEmpty || node != nil {
+            while let current = node {
+
+                stack.append(current)
+                node = current.left
+            }
+
+            let top = stack.removeLast()
+            body(top.value)
+            node = top.right
+        }
+    }
+
+    func postorderTraversal(_ body: (T) -> Void) {
+        var stack = [BinaryTree.Node]()
+        var node: BinaryTree.Node? = self
+        var prev: BinaryTree.Node?
+
+        while !stack.isEmpty || node != nil {
+            while let current = node {
+                stack.append(current)
+                node = current.left
+            }
+
+            let top = stack.removeLast()
+            if top.right == nil || top.right === prev {
+                body(top.value)
+                prev = top
+                node = nil
+            } else {
+                stack.append(top)
+                node = top.right
+            }
+        }
+    }
+}

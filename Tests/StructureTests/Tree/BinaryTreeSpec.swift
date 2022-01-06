@@ -36,4 +36,19 @@ class BinaryTreeSpec: XCTestCase {
         let tree: BinaryTree = [8, 10, 9, 7, 5]
         XCTAssertFalse(literal.root == tree.root)
     }
+
+    func testTraversal() {
+        let tree = BinaryTree([8, 2, 10, 9, 7, 5])
+        var answer = [Int]()
+        tree.root?.preorderTraversal({ answer.append($0) })
+        XCTAssertEqual(answer, [8, 2, 9, 7, 10, 5])
+
+        answer.removeAll()
+        tree.root?.inorderTraversal({ answer.append($0) })
+        XCTAssertEqual(answer, [9, 2, 7, 8, 5, 10])
+
+        answer.removeAll()
+        tree.root?.postorderTraversal({ answer.append($0) })
+        XCTAssertEqual(answer, [9, 7, 2, 5, 10, 8])
+    }
 }
