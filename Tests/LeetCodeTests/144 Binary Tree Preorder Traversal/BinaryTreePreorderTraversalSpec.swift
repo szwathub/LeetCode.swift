@@ -10,7 +10,7 @@ final class BinaryTreePreorderTraversalSpec: XCTestCase {
         (([1]), [1])
     ]
 
-    func testTwoSum() {
+    func testBinaryTreePreorderTraversal() {
         let solution = BinaryTreePreorderTraversal()
         for ((elements), answer) in questions {
             let tree = BinaryTree(elements)

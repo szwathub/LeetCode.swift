@@ -2,19 +2,19 @@ import XCTest
 @testable import LeetCode
 @testable import Structure
 
-final class BinaryTreeInorderTraversalSpec: XCTestCase {
+final class BinaryTreePostorderTraversalSpec: XCTestCase {
 
     fileprivate let questions: [(([Int?]), [Int])] = [
-        (([1, nil, 2, 3]), [1, 3, 2]),
+        (([1, nil, 2, 3]), [3, 2, 1]),
         (([]), []),
         (([1]), [1])
     ]
 
-    func testBinaryTreeInorderTraversal() {
-        let solution = BinaryTreeInorderTraversal()
+    func testBinaryTreePostorderTraversal() {
+        let solution = BinaryTreePostorderTraversal()
         for ((elements), answer) in questions {
             let tree = BinaryTree(elements)
-            XCTAssertEqual(solution.inorderTraversal(tree.root), answer)
+            XCTAssertEqual(solution.postorderTraversal(tree.root), answer)
         }
     }
 }
