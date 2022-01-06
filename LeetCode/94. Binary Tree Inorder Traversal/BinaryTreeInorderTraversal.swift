@@ -1,7 +1,7 @@
 //
 //  Copyright © 2022 Zhiwei Sun. All rights reserved.
 //
-//  File name: BinaryTreePreorderTraversal.swift
+//  File name: BinaryTreeInorderTraversal.swift
 //  Author:    Zhiwei Sun @szwathub
 //  E-mail:    szwathub@gmail.com
 //
@@ -13,20 +13,22 @@
 
 import Structure
 
-class BinaryTreePreorderTraversal {
-    func preorderTraversal(_ root: TreeNode?) -> [Int] {
+class BinaryTreeInorderTraversal {
+    func inorderTraversal(_ root: TreeNode?) -> [Int] {
         var stack = [TreeNode]()
         var answer = [Int]()
         var node: TreeNode? = root
 
         while !stack.isEmpty || node != nil {
             while let current = node {
-                answer.append(current.val)
                 stack.append(current)
                 node = current.left
             }
 
             node = stack.popLast()
+            if let node = node {
+                answer.append(node.val)
+            }
             node = node?.right
         }
 
