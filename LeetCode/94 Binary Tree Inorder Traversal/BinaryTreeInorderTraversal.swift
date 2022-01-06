@@ -25,11 +25,9 @@ class BinaryTreeInorderTraversal {
                 node = current.left
             }
 
-            node = stack.popLast()
-            if let node = node {
-                answer.append(node.val)
-            }
-            node = node?.right
+            let top = stack.removeLast()
+            answer.append(top.val)
+            node = top.right
         }
 
         return answer

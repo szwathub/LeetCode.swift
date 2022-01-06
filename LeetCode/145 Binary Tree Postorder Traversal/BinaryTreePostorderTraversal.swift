@@ -27,7 +27,7 @@ class BinaryTreePostorderTraversal {
             }
 
             let top = stack.removeLast()
-            if top.right == nil || top.right == prev {
+            if top.right == nil || top.right === prev {
                 answer.append(top.val)
                 prev = top
                 node = nil
