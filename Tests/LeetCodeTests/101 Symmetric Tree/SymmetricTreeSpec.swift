@@ -16,7 +16,8 @@ final class SymmetricTreeSpec: XCTestCase {
         let solution = SymmetricTree()
         for ((elements), answer) in questions {
             let tree = BinaryTree(elements)
-            XCTAssertEqual(solution.isSymmetric(tree.root), answer)
+            XCTAssertEqual(solution.isSymmetricI(tree.root), answer)
+            XCTAssertEqual(solution.isSymmetricII(tree.root), answer)
         }
     }
 }

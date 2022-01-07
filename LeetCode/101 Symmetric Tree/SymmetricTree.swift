@@ -14,7 +14,37 @@
 import Structure
 
 class SymmetricTree {
-    func isSymmetric(_ root: TreeNode?) -> Bool {
+    func isSymmetricI(_ root: TreeNode?) -> Bool {
+        var queue = [TreeNode?]()
+        queue.append(root?.left)
+        queue.append(root?.right)
+
+        while !queue.isEmpty {
+            let left  = queue.removeFirst()
+            let right = queue.removeFirst()
+
+            if left == nil && right == nil {
+                continue
+            }
+
+            guard let left = left, let right = right else {
+                return false
+            }
+            if left.val != right.val {
+                return false
+            }
+
+            queue.append(left.left)
+            queue.append(right.right)
+
+            queue.append(left.right)
+            queue.append(right.left)
+        }
+
+        return true
+    }
+
+    func isSymmetricII(_ root: TreeNode?) -> Bool {
         guard let root = root else {
             return true
         }
