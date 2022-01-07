@@ -16,6 +16,11 @@ public struct Stack<Element> {
     /// The array that stores the stack's elements.
     private(set) var elements = [Element]()
 
+    /// Creates a new, empty stack.
+    public init() {
+
+    }
+
     /// A Boolean value indicating whether the stack is empty.
     public var isEmpty: Bool {
         elements.isEmpty
