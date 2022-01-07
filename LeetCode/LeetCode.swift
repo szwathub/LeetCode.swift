@@ -26,3 +26,9 @@ extension BinaryTree.Node: LeetCodeCompatible where T == Int {
         return value
     }
 }
+
+extension BinaryTree.Node where T == Int {
+    public convenience init(_ val: Int) {
+        self.init(value: val, left: nil, right: nil)
+    }
+}
