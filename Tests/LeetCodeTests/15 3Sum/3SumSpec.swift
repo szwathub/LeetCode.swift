@@ -9,7 +9,7 @@ final class ThreeSumSpec: XCTestCase {
         (([0]), [])
     ]
 
-    func testMajorityElement() {
+    func testThreeSum() {
         let solution = ThreeSum()
         for ((nums), answer) in questions {
             XCTAssertEqual(solution.threeSum(nums), answer)
