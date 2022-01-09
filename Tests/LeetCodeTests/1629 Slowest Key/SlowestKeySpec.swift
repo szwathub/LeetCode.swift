@@ -8,7 +8,7 @@ final class SlowestKeySpec: XCTestCase {
         (([12, 23, 36, 46, 62], "spuda"), "a")
     ]
 
-    func testSlowestKeySpec() {
+    func testSlowestKey() {
         let solution = SlowestKey()
         for ((releaseTimes, keysPressed), answer) in questions {
             XCTAssertEqual(solution.slowestKey(releaseTimes, keysPressed), answer)
