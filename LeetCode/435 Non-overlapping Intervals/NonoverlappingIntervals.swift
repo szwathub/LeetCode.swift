@@ -17,11 +17,9 @@ class NonoverlappingIntervals {
 
         var right  = Int.min
         var remainder = 0
-        for interval in intervals {
-            if interval[0] >= right {
-                remainder += 1
-                right = interval[1]
-            }
+        for interval in intervals where interval[0] >= right {
+            remainder += 1
+            right = interval[1]
         }
 
         return intervals.count - remainder
