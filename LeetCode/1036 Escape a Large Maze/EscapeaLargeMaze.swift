@@ -56,7 +56,7 @@ class EscapeaLargeMaze {
     }
 
     private func check(_ blocked: Set<Pair>, _ start: Pair, _ end: Pair) -> Status {
-        var count = blocked.count * (blocked.count - 1) / 2;
+        var count = blocked.count * (blocked.count - 1) / 2
         var queue = [Pair]()
         var visited = Set<Pair>()
 
