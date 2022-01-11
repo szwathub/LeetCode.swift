@@ -16,7 +16,7 @@ class ProductofArrayExceptSelf {
         var answer = [Int](repeating: 0, count: nums.count)
 
         for index in 0..<nums.count {
-            if 0 == index {
+            if index == 0 {
                 answer[index] = 1
             } else {
                 answer[index] = answer[index - 1] * nums[index - 1]
