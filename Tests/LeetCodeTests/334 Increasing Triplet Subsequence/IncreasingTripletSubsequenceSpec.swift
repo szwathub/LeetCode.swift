@@ -10,7 +10,7 @@ final class IncreasingTripletSubsequenceSpec: XCTestCase {
         (([2, 1]), false)
     ]
 
-    func testIncreasingTripletSubsequenceSpec() {
+    func testIncreasingTripletSubsequence() {
         let solution = IncreasingTripletSubsequence()
         for ((nums), answer) in questions {
             XCTAssertEqual(solution.increasingTriplet(nums), answer)
