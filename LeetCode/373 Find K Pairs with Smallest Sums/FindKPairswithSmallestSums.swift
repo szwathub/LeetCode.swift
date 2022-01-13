@@ -29,7 +29,7 @@ class FindKPairswithSmallestSums {
             let pair = queue.dequeue()!
             answer.append([nums1[pair.0], nums2[pair.1]])
 
-            if (pair.1 + 1 < nums2.count) {
+            if pair.1 + 1 < nums2.count {
                 queue.enqueue((pair.0, pair.1 + 1))
             }
 
