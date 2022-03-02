@@ -48,8 +48,8 @@ class FindtheClosestPalindrome {
     private func getNumber(from halfCandidate: String, _ isEven: Bool) -> Int64 {
         if isEven {
             return Int64(halfCandidate + halfCandidate.reversed())!
-        } else {
-            return Int64(halfCandidate + String(Array(halfCandidate)[0..<halfCandidate.count-1]).reversed())!
         }
+
+        return Int64(halfCandidate + String(Array(halfCandidate)[0..<halfCandidate.count-1]).reversed())!
     }
 }
