@@ -29,6 +29,6 @@ class AddDigits {
 
     /// Time Complexity: O(1), Space Complexity: O(1)
     func addDigitsII(_ num: Int) -> Int {
-        return (num - 1) % 9 + 1;
+        return (num - 1) % 9 + 1
     }
 }
