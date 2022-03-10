@@ -103,18 +103,13 @@ final public class Tree<T> {
     public convenience init<S>(_ sequence: S) where T == S.Element, S: Sequence {
         self.init()
 
-        var stack = [Node]()
-        let elements = Array(sequence)
-        guard let first = elements.first else {
-            return
-        }
-
-        root = Node(value: first)
-        stack.append(root!)
-
-        for index in 1..<elements.count {
-            let node = Node(value: elements[index])
-            root?.children.append(node)
+        for element in Array(sequence) {
+            if root == nil {
+                root = Node(value: element)
+            } else {
+                let node = Node(value: element)
+                root?.children.append(node)
+            }
         }
     }
 }
