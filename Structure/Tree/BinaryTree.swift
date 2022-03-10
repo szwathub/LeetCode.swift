@@ -187,7 +187,7 @@ extension BinaryTree.Node: Equatable where T: Equatable {
 
 extension BinaryTree.Node: CustomStringConvertible {
 
-    /// A textual representation of the binary tree and its elements.
+    /// A textual representation of the binary tree node and its elements.
     public var description: String {
         var string = "{value: \(value)"
 
