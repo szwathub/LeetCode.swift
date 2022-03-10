@@ -32,3 +32,10 @@ extension BinaryTree.Node where T == Int {
         self.init(value: val, left: nil, right: nil)
     }
 }
+
+typealias Node = Tree<Int>.Node
+extension Tree.Node: LeetCodeCompatible where T == Int {
+    var val: Int {
+        return value
+    }
+}
