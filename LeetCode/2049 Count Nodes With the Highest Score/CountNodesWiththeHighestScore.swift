@@ -44,7 +44,7 @@ class CountNodesWiththeHighestScore {
             count += branch
         }
 
-        if (node != 0) {
+        if node != 0 {
             score *= n - count - 1
         }
 
