@@ -117,19 +117,19 @@ final public class Tree<T> {
 extension Tree: ExpressibleByArrayLiteral {
     public typealias ArrayLiteralElement = T
 
-        /// Creates tree from the given array literal by level order.
-        ///
-        /// Do not call this initializer directly. It is used by the compiler
-        /// when you use an array literal. Instead, create a new binary tree by using an
-        /// array literal as its value. To do this, enclose a comma-separated list of
-        /// values in square brackets.
-        ///
-        /// Here, an array of strings is created from an array literal holding
-        /// only strings.
-        ///
-        ///     let tree: Tree = ["cocoa beans", "sugar", "cocoa butter", "salt"]
-        ///
-        /// - Parameter elements: A variadic list of elements of the new tree.
+    /// Creates tree from the given array literal by level order.
+    ///
+    /// Do not call this initializer directly. It is used by the compiler
+    /// when you use an array literal. Instead, create a new binary tree by using an
+    /// array literal as its value. To do this, enclose a comma-separated list of
+    /// values in square brackets.
+    ///
+    /// Here, an array of strings is created from an array literal holding
+    /// only strings.
+    ///
+    ///     let tree: Tree = ["cocoa beans", "sugar", "cocoa butter", "salt"]
+    ///
+    /// - Parameter elements: A variadic list of elements of the new tree.
     public convenience init(arrayLiteral elements: T...) {
         self.init(elements)
     }
