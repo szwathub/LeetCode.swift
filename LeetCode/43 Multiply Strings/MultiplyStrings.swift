@@ -43,9 +43,9 @@ class MultiplyStrings {
             answer = add(answer, temp.reversed())
         }
 
-        return answer.map{ String($0) }.joined(separator: "")
+        return answer.map { String($0) }.joined(separator: "")
     }
-    
+
     private func add(_ num1: [Int], _ num2: [Int]) -> [Int] {
         var carry = 0
         var i = num1.count - 1
