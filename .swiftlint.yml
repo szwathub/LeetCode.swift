@@ -1,11 +1,11 @@
 included:
-  - Sources
+  - LeetCode
+  - Structure 
   - Tests
 
 disabled_rules:
   - nesting
   - identifier_name
-  - switch_case_alignment
   - type_name
   - large_tuple
 opt_in_rules:
