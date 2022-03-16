@@ -29,10 +29,10 @@ class BinaryTreeZigzagLevelOrderTraversal {
                 let node = quene.removeFirst()
                 level.append(node.val)
 
-                if let right = node.right {
+                if let right = node.left {
                     quene.append(right)
                 }
-                if let left = node.left {
+                if let left = node.right {
                     quene.append(left)
                 }
             }
