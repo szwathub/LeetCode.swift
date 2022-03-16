@@ -18,13 +18,13 @@ class MaximumNestingDepthoftheParenthese {
 
         for character in s {
             switch character {
-                case "(":
-                    stack.append(character)
-                case ")":
-                    answer = max(answer, stack.count)
-                    _ = stack.popLast()
-                default:
-                    break
+            case "(":
+                stack.append(character)
+            case ")":
+                answer = max(answer, stack.count)
+                _ = stack.popLast()
+            default:
+                break
             }
         }
 

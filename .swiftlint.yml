@@ -1,6 +1,6 @@
 included:
   - LeetCode
-  - Structure 
+  - Structure
   - Tests
 
 disabled_rules:

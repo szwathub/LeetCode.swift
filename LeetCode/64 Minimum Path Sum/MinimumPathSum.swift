@@ -20,14 +20,14 @@ class MinimumPathSum {
         for i in 0..<m {
             for j in 0..<n {
                 switch (i, j) {
-                    case (0, 0):
-                        dp[i][j] = grid[i][j]
-                    case (0, _):
-                        dp[i][j] = dp[i][j - 1] + grid[i][j]
-                    case (_, 0):
-                        dp[i][j] = dp[i - 1][j] + grid[i][j]
-                    default:
-                        dp[i][j] = min(dp[i][j - 1], dp[i - 1][j]) + grid[i][j]
+                case (0, 0):
+                    dp[i][j] = grid[i][j]
+                case (0, _):
+                    dp[i][j] = dp[i][j - 1] + grid[i][j]
+                case (_, 0):
+                    dp[i][j] = dp[i - 1][j] + grid[i][j]
+                default:
+                    dp[i][j] = min(dp[i][j - 1], dp[i - 1][j]) + grid[i][j]
                 }
             }
         }

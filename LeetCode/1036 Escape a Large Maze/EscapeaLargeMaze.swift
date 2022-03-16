@@ -46,12 +46,12 @@ class EscapeaLargeMaze {
         let end   = Pair(target[0], target[1])
         let status = check(map, start, end)
         switch status {
-            case .blocked:
-                return false
-            case .valid:
-                return check(map, end, start) != .blocked
-            case .found:
-                return true
+        case .blocked:
+            return false
+        case .valid:
+            return check(map, end, start) != .blocked
+        case .found:
+            return true
         }
     }
 

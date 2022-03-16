@@ -35,23 +35,23 @@ class StringtoInteger {
             updateState(character)
 
             switch state {
-                case .start:
-                    break
-                case .sign:
-                    sign = character == "-" ? -1 : 1
-                case .number:
-                    if let value = Int(String(character)) {
-                        ans = ans * 10 + value
-                        if sign == 1 && ans > Int32.max {
-                            ans = Int(Int32.max)
-                            state = .end
-                        } else if sign == -1 && ans * -1 < Int32.min {
-                            ans = -Int(Int32.min)
-                            state = .end
-                        }
+            case .start:
+                break
+            case .sign:
+                sign = character == "-" ? -1 : 1
+            case .number:
+                if let value = Int(String(character)) {
+                    ans = ans * 10 + value
+                    if sign == 1 && ans > Int32.max {
+                        ans = Int(Int32.max)
+                        state = .end
+                    } else if sign == -1 && ans * -1 < Int32.min {
+                        ans = -Int(Int32.min)
+                        state = .end
                     }
-                case .end:
-                    break
+                }
+            case .end:
+                break
             }
 
             return state

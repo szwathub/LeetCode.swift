@@ -18,12 +18,12 @@ class SimplifyPath {
         var stack = [String]()
         for op in list {
             switch op {
-                case "..":
-                    _ = stack.popLast()
-                case ".":
-                    break
-                default:
-                    stack.append(op)
+            case "..":
+                _ = stack.popLast()
+            case ".":
+                break
+            default:
+                stack.append(op)
             }
         }
 
