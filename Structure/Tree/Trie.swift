@@ -15,14 +15,14 @@ final public class Trie {
 
     public class Node {
 
-        fileprivate var children = [Character: Node]()
+        public var children = [Character: Node]()
 
-        fileprivate var isEnd = false
+        public var isEnd = false
     }
 
-    var root: Node
+    public var root: Node
 
-    init() {
+    public init() {
         root = Node()
     }
 
