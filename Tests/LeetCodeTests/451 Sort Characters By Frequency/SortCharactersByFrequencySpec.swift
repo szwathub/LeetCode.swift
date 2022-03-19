@@ -4,7 +4,7 @@ import XCTest
 final class SortCharactersByFrequencySpec: XCTestCase {
 
     fileprivate let questions: [((String), [String])] = [
-        (("tree"), ["eert"]),
+        (("tree"), ["eert", "eetr"]),
         (("cccaaa"), ["aaaccc", "cccaaa"]),
         (("Aabb"), ["bbaA", "bbAa"])
     ]
