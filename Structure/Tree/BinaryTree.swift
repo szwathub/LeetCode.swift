@@ -226,7 +226,6 @@ extension BinaryTree.Node {
 
         while !stack.isEmpty || node != nil {
             while let current = node {
-
                 stack.append(current)
                 node = current.left
             }
