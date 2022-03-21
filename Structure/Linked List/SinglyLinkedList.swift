@@ -11,6 +11,7 @@
 //      2021/10/20: Created by szwathub on 2021/10/20
 //
 
+/// Definition for singly-linked list.
 final public class SinglyLinkedList<T> {
     public class Node {
         public var value: T
@@ -77,19 +78,17 @@ final public class SinglyLinkedList<T> {
     public convenience init<S>(_ sequence: S) where T == S.Element, S: Sequence {
         self.init()
 
-        var headSet = false
-        var current: Node?
-
+        var current = head
         for element in sequence {
-            if headSet == false {
+            if let node = current {
+                node.next = Node(value: element)
+                current = node.next
+            } else {
                 head = Node(value: element)
                 current = head
-                headSet = true
-            } else {
-                current?.next = Node(value: element)
-                current = current?.next
             }
         }
+
         tail = current
     }
 }
@@ -167,11 +166,13 @@ extension SinglyLinkedList.Node where T: Equatable {
     ///
     public func firstNode(of element: T) -> SinglyLinkedList.Node? {
         var find: SinglyLinkedList.Node? = self
-        while find != nil {
-            if find?.value == element {
-                return find
+
+        while let node = find {
+            if node.value == element {
+                return node
             }
-            find = find?.next
+
+            find = node.next
         }
 
         return nil
