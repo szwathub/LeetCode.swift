@@ -10,4 +10,3 @@ final class RangeSumQueryMutableSpec: XCTestCase {
         XCTAssertEqual(solution.sumRange(0, 2), 8)
     }
 }
-
