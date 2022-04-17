@@ -18,7 +18,7 @@ final class MostCommonWordSpec: XCTestCase {
 
     fileprivate let questions: [((String, [String]), String)] = [
         (("Bob hit a ball, the hit BALL flew far after it was hit.", ["hit"]), "ball"),
-        (("a.", []), "a"),
+        (("a.", []), "a")
     ]
 
     func testMostCommonWord() {
