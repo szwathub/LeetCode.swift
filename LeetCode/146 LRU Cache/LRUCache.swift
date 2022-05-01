@@ -12,7 +12,7 @@
 //
 
 class LRUCache {
-    
+
     class Node {
         var key: Int
 
@@ -33,7 +33,6 @@ class LRUCache {
 
     private var head: Node?
     private var tail: Node?
-    
 
     init(_ capacity: Int) {
         self.capacity = capacity
@@ -50,7 +49,7 @@ class LRUCache {
             moveToHead(node)
             return node.value
         }
-        
+
         return -1
     }
 
@@ -60,7 +59,7 @@ class LRUCache {
             moveToHead(node)
             return
         }
-        
+
         let new = Node(key, value)
         cache[key] = new
         addToHead(new)
@@ -70,7 +69,7 @@ class LRUCache {
             remove(node)
         }
     }
-    
+
     private func moveToHead(_ node: Node) {
         remove(node)
         addToHead(node)
@@ -80,7 +79,7 @@ class LRUCache {
         node.prev?.next = node.next
         node.next?.prev = node.prev
     }
-    
+
     private func addToHead(_ node: Node) {
         node.prev = head
         node.next = head?.next
