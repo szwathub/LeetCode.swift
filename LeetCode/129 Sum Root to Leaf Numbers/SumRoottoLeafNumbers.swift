@@ -24,11 +24,10 @@ class SumRoottoLeafNumbers {
         }
 
         let number = number * 10 + root.val
-
         if root.left == nil && root.right == nil {
             return number
-        } else {
-            return dfs(root.left, number) + dfs(root.right, number)
         }
+
+        return dfs(root.left, number) + dfs(root.right, number)
     }
 }

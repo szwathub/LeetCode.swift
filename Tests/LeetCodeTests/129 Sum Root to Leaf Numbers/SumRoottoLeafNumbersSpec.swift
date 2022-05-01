@@ -6,7 +6,8 @@ final class SumRoottoLeafNumbersSpec: XCTestCase {
 
     fileprivate let questions: [(([Int?]), Int)] = [
         (([1, 2, 3]), 25),
-        (([4, 9, 0, 5, 1]), 1026)
+        (([4, 9, 0, 5, 1]), 1026),
+        (([]), 0)
     ]
 
     func testSumRoottoLeafNumbers() {
