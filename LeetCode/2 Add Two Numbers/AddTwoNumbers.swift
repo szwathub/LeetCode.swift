@@ -24,10 +24,10 @@ class AddTwoNumbers {
             carry = sum / 10
 
             if head == nil {
-                head = ListNode(value: sum % 10)
+                head = ListNode(sum % 10)
                 tail = head
             } else {
-                tail?.next = ListNode(value: sum % 10)
+                tail?.next = ListNode(sum % 10)
                 tail = tail?.next
             }
 

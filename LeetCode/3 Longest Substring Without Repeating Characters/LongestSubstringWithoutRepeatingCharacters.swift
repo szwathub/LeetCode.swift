@@ -12,6 +12,7 @@
 //
 
 class LongestSubstringWithoutRepeatingCharacters {
+    /// Time Complexity: O(n), Space Complexity: O(n)
     func lengthOfLongestSubstring(_ s: String) -> Int {
         var set = Set<Character>()
         var right = -1, answer = 0
@@ -28,6 +29,23 @@ class LongestSubstringWithoutRepeatingCharacters {
             }
 
             answer = max(answer, right - left + 1)
+        }
+
+        return answer
+    }
+
+    /// Time Complexity: O(n), Space Complexity: O(n)
+    func lengthOfLongestSubstringII(_ s: String) -> Int {
+        var map = [Character: Int]()
+        var start = 0
+        var answer = 0
+        for (index, character) in s.enumerated() {
+            if let prev = map[character], prev > start {
+                start = prev
+            } else {
+                answer = max(index - start + 1, answer)
+            }
+            map[character] = index + 1
         }
 
         return answer
