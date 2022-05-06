@@ -4,7 +4,7 @@ import XCTest
 final class SubarrayProductLessThanKSpec: XCTestCase {
 
     fileprivate let questions: [(([Int], Int), Int)] = [
-//        (([10, 5, 2, 6], 100), 8),
+        (([10, 5, 2, 6], 100), 8),
         (([1, 2, 3], 0), 0)
     ]
 
