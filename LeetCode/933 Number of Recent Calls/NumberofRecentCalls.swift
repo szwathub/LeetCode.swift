@@ -14,11 +14,11 @@
 class RecentCounter {
 
     var queue: [Int]
-    
+
     init() {
         queue = []
     }
-    
+
     func ping(_ t: Int) -> Int {
         queue.append(t)
         while let first = queue.first, first < t - 3000 {
