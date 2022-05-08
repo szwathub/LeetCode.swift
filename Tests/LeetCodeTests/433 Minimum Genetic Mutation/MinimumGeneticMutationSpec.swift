@@ -4,8 +4,11 @@ import XCTest
 final class MinimumGeneticMutationSpec: XCTestCase {
 
     fileprivate let questions: [((String, String, [String]), Int)] = [
+        (("AACCGGTT", "AACCGGTT", ["AACCGGTA"]), 0),
         (("AACCGGTT", "AACCGGTA", ["AACCGGTA"]), 1),
+        (("AACCGGTT", "AACCGGTA", ["AACCGGTT"]), -1),
         (("AACCGGTT", "AAACGGTA", ["AACCGGTA", "AACCGCTA", "AAACGGTA"]), 2),
+        (("AACCGGTT", "AAACGGGA", ["AAACGGGA"]), -1),
         (("AAAAACCC", "AACCCCCC", ["AAAACCCC", "AAACCCCC", "AACCCCCC"]), 3)
     ]
 
