@@ -6,7 +6,8 @@ final class SumofRootToLeafBinaryNumbersSpec: XCTestCase {
 
     fileprivate let questions: [(([Int?]), Int)] = [
         (([1, 0, 1, 0, 1, 0, 1]), 22),
-        (([0]), 0)
+        (([0]), 0),
+        (([]), 0)
     ]
 
     func testSumofRootToLeafBinaryNumbers() {
