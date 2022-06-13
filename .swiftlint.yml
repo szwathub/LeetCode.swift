@@ -2,6 +2,8 @@ included:
   - LeetCode
   - Structure
   - Tests
+excluded:
+  - LeetCode/*/RandomPointinNonoverlappingRectangles.swift
 
 disabled_rules:
   - nesting
