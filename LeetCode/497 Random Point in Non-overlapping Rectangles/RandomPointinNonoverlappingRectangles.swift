@@ -29,6 +29,15 @@ class RandomPointinNonoverlappingRectangles {
 
     func pick() -> [Int] {
         let target = Int.random(in: 1...prefix[prefix.count - 1])
+        let index = search(target) - 1
+        let rect = rects[index]
+        let (a, b, x, y) = (rect[0], rect[1], rect[2], rect[3])
+
+        return [Int.random(in: a...x), Int.random(in: b...y)]
+    }
+
+    func search(_ target: Int) -> Int {
+        print(target)
         var left = 0, right = prefix.count - 1
         while left < right {
             let mid = (left + right) >> 1
@@ -38,10 +47,7 @@ class RandomPointinNonoverlappingRectangles {
                 left = mid + 1
             }
         }
-        let index = left - 1
-        let rect = rects[index]
-        let (a, b, x, y) = (rect[0], rect[1], rect[2], rect[3])
 
-        return [Int.random(in: a...x), Int.random(in: b...y)]
+        return left
     }
 }
