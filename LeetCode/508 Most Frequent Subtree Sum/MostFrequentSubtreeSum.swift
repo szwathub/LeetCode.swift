@@ -16,7 +16,7 @@ import Structure
 class MostFrequentSubtreeSum {
     func findFrequentTreeSum(_ root: TreeNode?) -> [Int] {
         var map = [Int: Int]()
-        _ = dfs(root, &map)
+        dfs(root, &map)
 
         guard let max = map.values.max() else {
             return []
@@ -25,6 +25,7 @@ class MostFrequentSubtreeSum {
         return Array(map.filter { $0.value == max }.keys)
     }
 
+    @discardableResult
     private func dfs(_ root: TreeNode?, _ map: inout [Int: Int]) -> Int {
         guard let root = root else {
             return 0
