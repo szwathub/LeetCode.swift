@@ -37,7 +37,6 @@ class RandomPointinNonoverlappingRectangles {
     }
 
     func search(_ target: Int) -> Int {
-        print(target)
         var left = 0, right = prefix.count - 1
         while left < right {
             let mid = (left + right) >> 1
