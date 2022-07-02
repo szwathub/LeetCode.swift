@@ -28,7 +28,7 @@ class MinimumNumberofRefuelingStops {
                 ans += 1
                 remain += most
             }
-            
+
             location += remain
             remain = 0
             while index < stations.count && stations[index][0] <= location {
@@ -36,7 +36,7 @@ class MinimumNumberofRefuelingStops {
                 index += 1
             }
         }
-        
+
         return ans
     }
 }
