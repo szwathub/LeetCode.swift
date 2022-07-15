@@ -11,29 +11,11 @@
 //      2022/4/29: Created by szwathub on 2022/4/29
 //
 
+import Structure
+
 class ConstructQuadTree {
-    public class Node {
-        public var val: Bool
 
-        public var isLeaf: Bool
-
-        public var topLeft: Node?
-
-        public var topRight: Node?
-
-        public var bottomLeft: Node?
-
-        public var bottomRight: Node?
-
-        public init(_ val: Bool, _ isLeaf: Bool) {
-              self.val = val
-              self.isLeaf = isLeaf
-              self.topLeft = nil
-              self.topRight = nil
-              self.bottomLeft = nil
-              self.bottomRight = nil
-        }
-    }
+    typealias Node = QuadTree.Node
 
     var grid = [[Int]]()
 
