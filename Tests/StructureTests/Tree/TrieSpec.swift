@@ -6,5 +6,6 @@ class TrieSpec: XCTestCase {
         let trie = Trie()
         trie.insert("leetcode")
         trie.insert("leetco")
+        _ = trie.search("la")
     }
 }
