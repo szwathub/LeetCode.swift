@@ -50,5 +50,15 @@ class BinaryTreeSpec: XCTestCase {
         answer.removeAll()
         tree.root?.postorderTraversal({ answer.append($0) })
         XCTAssertEqual(answer, [9, 7, 2, 5, 10, 8])
+
+        var list = [[Int]]()
+        tree.root?.levelOrderTraversal({ level, value in
+            if level < list.count {
+                list[level].append(value)
+            } else {
+                list.append([value])
+            }
+        })
+        XCTAssertEqual(list, [[8], [2, 10], [9, 7, 5]])
     }
 }

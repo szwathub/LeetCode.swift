@@ -204,7 +204,7 @@ extension BinaryTree.Node: CustomStringConvertible {
 }
 
 extension BinaryTree.Node {
-    func preorderTraversal(_ body: (T) -> Void) {
+    public func preorderTraversal(_ body: (T) -> Void) {
         var stack = [BinaryTree.Node]()
         var node: BinaryTree.Node? = self
 
@@ -220,7 +220,7 @@ extension BinaryTree.Node {
         }
     }
 
-    func inorderTraversal(_ body: (T) -> Void) {
+    public func inorderTraversal(_ body: (T) -> Void) {
         var stack = [BinaryTree.Node]()
         var node: BinaryTree.Node? = self
 
@@ -236,7 +236,7 @@ extension BinaryTree.Node {
         }
     }
 
-    func postorderTraversal(_ body: (T) -> Void) {
+    public func postorderTraversal(_ body: (T) -> Void) {
         var stack = [BinaryTree.Node]()
         var node: BinaryTree.Node? = self
         var prev: BinaryTree.Node?
@@ -256,6 +256,28 @@ extension BinaryTree.Node {
                 stack.append(top)
                 node = top.right
             }
+        }
+    }
+
+    public func levelOrderTraversal(_ body: (Int, T) -> Void) {
+        var quene = [BinaryTree.Node]()
+        quene.append(self)
+        var level = 0
+
+        while !quene.isEmpty {
+            for _ in 0..<quene.count {
+                let node = quene.removeFirst()
+                body(level, node.value)
+
+                if let left = node.left {
+                    quene.append(left)
+                }
+                if let right = node.right {
+                    quene.append(right)
+                }
+            }
+
+            level += 1
         }
     }
 }
