@@ -19,26 +19,15 @@ class BinaryTreeLevelOrderTraversal {
             return []
         }
 
-        var quene = [TreeNode]()
-        var answer = [[Int]]()
-        quene.append(root)
-
-        while !quene.isEmpty {
-            var level = [Int]()
-            for _ in 0..<quene.count {
-                let node = quene.removeFirst()
-                level.append(node.val)
-
-                if let left = node.left {
-                    quene.append(left)
-                }
-                if let right = node.right {
-                    quene.append(right)
-                }
+        var ans = [[Int]]()
+        root.levelOrderTraversal({ level, value in
+            if level < ans.count {
+                ans[level].append(value)
+            } else {
+                ans.append([value])
             }
-            answer.append(level)
-        }
+        })
 
-        return answer
+        return ans
     }
 }

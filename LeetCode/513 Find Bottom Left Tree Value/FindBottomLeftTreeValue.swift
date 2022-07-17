@@ -11,32 +11,23 @@
 //      2022/7/2: Created by szwathub on 2022/7/2
 //
 
+import Structure
+
 class FindBottomLeftTreeValue {
     func findBottomLeftValue(_ root: TreeNode?) -> Int {
         guard let root = root else {
             return 0
         }
 
-        var quene = [TreeNode]()
-        var answer = [Int]()
-        quene.append(root)
-
-        while !quene.isEmpty {
-            var level = [Int]()
-            for _ in 0..<quene.count {
-                let node = quene.removeFirst()
-                level.append(node.val)
-
-                if let left = node.left {
-                    quene.append(left)
-                }
-                if let right = node.right {
-                    quene.append(right)
-                }
+        var current = -1
+        var ans = 0
+        root.levelOrderTraversal { index, value in
+            if current != index {
+                current = index
+                ans = value
             }
-            answer = level
         }
 
-        return answer.first!
+        return ans
     }
 }
