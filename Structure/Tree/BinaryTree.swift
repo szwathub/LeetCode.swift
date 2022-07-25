@@ -204,13 +204,13 @@ extension BinaryTree.Node: CustomStringConvertible {
 }
 
 extension BinaryTree.Node {
-    public func preorderTraversal(_ body: (T) -> Void) {
+    public func preorderTraversal(_ body: (BinaryTree.Node) -> Void) {
         var stack = [BinaryTree.Node]()
         var node: BinaryTree.Node? = self
 
         while !stack.isEmpty || node != nil {
             while let current = node {
-                body(current.value)
+                body(current)
                 stack.append(current)
                 node = current.left
             }
@@ -220,7 +220,7 @@ extension BinaryTree.Node {
         }
     }
 
-    public func inorderTraversal(_ body: (T) -> Void) {
+    public func inorderTraversal(_ body: (BinaryTree.Node) -> Void) {
         var stack = [BinaryTree.Node]()
         var node: BinaryTree.Node? = self
 
@@ -231,12 +231,12 @@ extension BinaryTree.Node {
             }
 
             let top = stack.removeLast()
-            body(top.value)
+            body(top)
             node = top.right
         }
     }
 
-    public func postorderTraversal(_ body: (T) -> Void) {
+    public func postorderTraversal(_ body: (BinaryTree.Node) -> Void) {
         var stack = [BinaryTree.Node]()
         var node: BinaryTree.Node? = self
         var prev: BinaryTree.Node?
@@ -249,7 +249,7 @@ extension BinaryTree.Node {
 
             let top = stack.removeLast()
             if top.right == nil || top.right === prev {
-                body(top.value)
+                body(top)
                 prev = top
                 node = nil
             } else {
@@ -259,7 +259,7 @@ extension BinaryTree.Node {
         }
     }
 
-    public func levelOrderTraversal(_ body: (Int, T) -> Void) {
+    public func levelOrderTraversal(_ body: (Int, BinaryTree.Node) -> Void) {
         var quene = [BinaryTree.Node]()
         quene.append(self)
         var level = 0
@@ -267,7 +267,7 @@ extension BinaryTree.Node {
         while !quene.isEmpty {
             for _ in 0..<quene.count {
                 let node = quene.removeFirst()
-                body(level, node.value)
+                body(level, node)
 
                 if let left = node.left {
                     quene.append(left)

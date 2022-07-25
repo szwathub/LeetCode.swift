@@ -21,10 +21,10 @@ class FindBottomLeftTreeValue {
 
         var current = -1
         var ans = 0
-        root.levelOrderTraversal { index, value in
+        root.levelOrderTraversal { index, node in
             if current != index {
                 current = index
-                ans = value
+                ans = node.value
             }
         }
 

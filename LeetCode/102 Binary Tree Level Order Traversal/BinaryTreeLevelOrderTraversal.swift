@@ -20,11 +20,11 @@ class BinaryTreeLevelOrderTraversal {
         }
 
         var ans = [[Int]]()
-        root.levelOrderTraversal({ level, value in
+        root.levelOrderTraversal({ level, node in
             if level < ans.count {
-                ans[level].append(value)
+                ans[level].append(node.val)
             } else {
-                ans.append([value])
+                ans.append([node.val])
             }
         })
 

@@ -20,11 +20,11 @@ class FindLargestValueinEachTreeRow {
         }
 
         var ans = [Int]()
-        root.levelOrderTraversal { index, value in
+        root.levelOrderTraversal { index, node in
             if index < ans.count {
-                ans[index] = max(ans[index], value)
+                ans[index] = max(ans[index], node.val)
             } else {
-                ans.append(value)
+                ans.append(node.val)
             }
         }
 
