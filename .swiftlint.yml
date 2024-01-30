@@ -1,0 +1,17 @@
+included:
+  - LeetCode
+  - Structure
+  - Tests
+
+disabled_rules:
+  - nesting
+  - identifier_name
+  - type_name
+  - large_tuple
+  - inclusive_language
+opt_in_rules:
+  - yoda_condition
+
+line_length:
+  warning: 120
+  error: 240
