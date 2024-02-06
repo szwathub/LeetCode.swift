@@ -9,7 +9,7 @@ final class NumsGameSpec: XCTestCase {
         (([1, 1, 1, 2, 3, 4]), [0, 1, 2, 3, 3, 3])
     ]
 
-    func testNumsGame() {
+    func test() {
         let solution = NumsGame()
         for ((nums), answer) in questions {
             XCTAssertEqual(

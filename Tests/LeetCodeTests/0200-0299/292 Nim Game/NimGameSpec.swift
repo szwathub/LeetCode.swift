@@ -9,7 +9,7 @@ final class NimGameSpec: XCTestCase {
         ((2), true),
     ]
 
-    func testFreedomTrail() {
+    func test() {
         let solution = NimGame()
         for ((n), answer) in questions {
             XCTAssertEqual(

@@ -27,7 +27,7 @@ final class StoneGameVIISpec: XCTestCase {
         )
     ]
 
-    func testFreedomTrail() {
+    func test() {
         let solution = StoneGameVII()
         for ((stones), answer) in questions {
             XCTAssertEqual(

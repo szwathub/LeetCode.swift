@@ -8,7 +8,7 @@ final class FindtheDistinctDifferenceArraySpec: XCTestCase {
         (([3, 2, 3, 4, 2]), [-2, -1, 0, 2, 3])
     ]
 
-    func testFreedomTrail() {
+    func test() {
         let solution = FindtheDistinctDifferenceArray()
         for ((nums), answer) in questions {
             XCTAssertEqual(

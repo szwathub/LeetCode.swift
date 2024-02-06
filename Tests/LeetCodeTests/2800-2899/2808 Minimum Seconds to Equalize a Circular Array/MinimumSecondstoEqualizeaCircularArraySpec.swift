@@ -9,7 +9,7 @@ final class MinimumSecondstoEqualizeaCircularArraySpec: XCTestCase {
         (([5, 5, 5, 5]), 0)
     ]
 
-    func testFreedomTrail() {
+    func test() {
         let solution = MinimumSecondstoEqualizeaCircularArray()
         for ((nums), answer) in questions {
             XCTAssertEqual(

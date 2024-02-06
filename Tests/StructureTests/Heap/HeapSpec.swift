@@ -2,7 +2,8 @@ import XCTest
 @testable import Structure
 
 class HeapSpec: XCTestCase {
-    func testHeap() {
+
+    func test() {
         var minHeap = Heap<Int>.init(sort: <)
         XCTAssertNil(minHeap.remove())
         minHeap.insert(1)

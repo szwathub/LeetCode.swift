@@ -9,7 +9,7 @@ final class StoneGameVISpec: XCTestCase {
         (([2, 4, 3], [1, 6, 7]), -1)
     ]
 
-    func testFreedomTrail() {
+    func test() {
         let solution = StoneGameVI()
         for ((aliceValues, bobValues), answer) in questions {
             XCTAssertEqual(

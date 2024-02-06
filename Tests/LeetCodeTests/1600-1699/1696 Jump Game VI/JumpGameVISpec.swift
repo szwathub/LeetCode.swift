@@ -27,7 +27,7 @@ final class JumpGameVISpec: XCTestCase {
         )
     ]
 
-    func testFreedomTrail() {
+    func test() {
         let solution = JumpGameVI()
         for ((nums, k), answer) in questions {
             XCTAssertEqual(
