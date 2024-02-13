@@ -1,5 +1,5 @@
 //
-// Copyright © 2024 Zhiwei Sun. All rights reserved.
+//  Copyright © 2024 Zhiwei Sun. All rights reserved.
 //
 //  File name: CousinsinBinaryTree.swift
 //  Author:    Zhiwei Sun @szwathub
