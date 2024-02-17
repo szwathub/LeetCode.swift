@@ -15,3 +15,10 @@ extension BinaryTree: LeetCodeCompatible where T == Int {
         }
     }
 }
+
+typealias Node = Tree<Int>.Node
+extension Tree: LeetCodeCompatible where T == Int {
+    var val: Int {
+        return value
+    }
+}
